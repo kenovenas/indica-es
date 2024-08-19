@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+#banner-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.banner {
+    flex: 1 1 calc(20% - 10px); /* Ajuste para 5 banners por linha */
+    min-width: 150px;
+    max-width: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-name {
+    margin-top: 5px;
+}
+
+.banner-name a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+#banner-code {
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

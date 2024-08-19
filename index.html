@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vendas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Adicione o CSS aqui para estilo básico */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        #banner-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+        }
+        .banner {
+            flex: 1 1 calc(20% - 10px); /* Ajuste para 5 banners por linha */
+            min-width: 150px;
+            max-width: 300px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+        .banner-name {
+            margin-top: 5px;
+        }
+        .banner-name a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tem de Tudo</h1>
+    </header>
+    <section id="banner-container">
+        <!-- Banner 1 -->
+        <div class="banner">
+            <div class="banner-content">
+                <img src="https://example.com/banner1.jpg" alt="Produto 1">
+            </div>
+            <div class="banner-name">
+                <a href="https://example.com/produto1" target="_blank">Nome do Produto 1</a>
+            </div>
+        </div>
+
+        <!-- Banner 2 -->
+        <div class="banner">
+            <div class="banner-content">
+                <img src="https://example.com/banner2.jpg" alt="Produto 2">
+            </div>
+            <div class="banner-name">
+                <a href="https://example.com/produto2" target="_blank">Nome do Produto 2</a>
+            </div>
+        </div>
+
+        <!-- Banner 3 -->
+        <div class="banner">
+            <div class="banner-content">
+                <img src="https://example.com/banner3.jpg" alt="Produto 3">
+            </div>
+            <div class="banner-name">
+                <a href="https://example.com/produto3" target="_blank">Nome do Produto 3</a>
+            </div>
+        </div>
+
+        <!-- Banner 4 -->
+        <div class="banner">
+            <div class="banner-content">
+                <img src="https://example.com/banner4.jpg" alt="Produto 4">
+            </div>
+            <div class="banner-name">
+                <a href="https://example.com/produto4" target="_blank">Nome do Produto 4</a>
+            </div>
+        </div>
+
+        <!-- Banner 5 -->
+        <div class="banner">
+            <div class="banner-content">
+                <img src="https://example.com/banner5.jpg" alt="Produto 5">
+            </div>
+            <div class="banner-name">
+                <a href="https://example.com/produto5" target="_blank">Nome do Produto 5</a>
+            </div>
+        </div>
+
+        <!-- Adicione mais banners aqui se necessário -->
+    </section>
+    <footer>
+        <p>Para adicionar novos banners, edite o código HTML diretamente.</p>
+    </footer>
+</body>
+</html>
