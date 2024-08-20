@@ -147,23 +147,26 @@
 
     <script>
         (function() {
-            var adblockTest = document.createElement('div');
-            adblockTest.innerHTML = '&nbsp;';
-            adblockTest.className = 'adsbox';
-            adblockTest.style.position = 'absolute';
-            adblockTest.style.left = '-9999px';
-            document.body.appendChild(adblockTest);
+            var testAdBlock = document.createElement('div');
+            testAdBlock.innerHTML = '&nbsp;';
+            testAdBlock.className = 'adsbox';
+            testAdBlock.style.position = 'absolute';
+            testAdBlock.style.top = '-9999px';
+            testAdBlock.style.width = '1px';
+            testAdBlock.style.height = '1px';
+            testAdBlock.style.overflow = 'hidden';
+            document.body.appendChild(testAdBlock);
 
             window.onload = function() {
                 setTimeout(function() {
-                    if (adblockTest.offsetHeight === 0) {
+                    if (testAdBlock.offsetHeight === 0) {
                         document.getElementById('adblock-message').style.display = 'block';
                         document.querySelector('.content').style.display = 'none';
                     } else {
                         document.querySelector('.content').style.display = 'block';
                         document.getElementById('adblock-message').style.display = 'none';
                     }
-                    document.body.removeChild(adblockTest);
+                    document.body.removeChild(testAdBlock);
                 }, 100);
             };
         })();
