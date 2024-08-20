@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -33,23 +32,44 @@
             // Cria um elemento div que normalmente seria bloqueado pelo Adblock
             var ad = document.createElement('div');
             ad.className = 'ad-banner';
-            ad.style.display = 'none';
+            ad.style.position = 'absolute';
+            ad.style.width = '1px';
+            ad.style.height = '1px';
+            ad.style.top = '-1px';
+            ad.style.left = '-1px';
+            ad.style.overflow = 'hidden';
             document.body.appendChild(ad);
 
             // Verifica se o Adblock está bloqueando o conteúdo
-            if (ad.offsetHeight === 0) {
-                // Se o Adblock estiver ativo, exibe a mensagem de aviso
-                document.getElementById('adblock-message').style.display = 'block';
-            } else {
-                // Se o Adblock não estiver ativo, mostra o conteúdo da página
-                document.body.style.display = 'block';
-            }
+            setTimeout(function() {
+                if (ad.offsetHeight === 0) {
+                    // Se o Adblock estiver ativo, exibe a mensagem de aviso
+                    document.getElementById('adblock-message').style.display = 'block';
+                } else {
+                    // Se o Adblock não estiver ativo, mostra o conteúdo da página
+                    document.body.style.display = 'block';
+                }
+            }, 100); // Espera um curto período para garantir a detecção
         });
     </script>
 </head>
 <body>
     <!-- Mensagem de Adblock -->
     <div id="adblock-message">Por favor, desative o Adblock para continuar usando o site.</div>
+    
+    <!-- Conteúdo do seu site -->
+    <h1>Bem-vindo ao meu site</h1>
+    <p>Este é o conteúdo principal do site.</p>
+</body>
+</html>
+
+    
+    <!-- Conteúdo do seu site -->
+    <h1>Bem-vindo ao meu site</h1>
+    <p>Este é o conteúdo principal do site.</p>
+</body>
+</html>
+
     
     <!-- Conteúdo do seu site -->
     <h1>Bem-vindo ao meu site</h1>
