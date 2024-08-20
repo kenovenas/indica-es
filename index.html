@@ -58,12 +58,13 @@
             flex-wrap: wrap;
             gap: 10px;
             padding: 10px;
+            background-color: #007BFF; /* Fundo azul */
         }
         .banner {
             flex: 1 1 calc(25% - 10px); /* 4 banners por linha */
             min-width: 200px;
             max-width: 300px;
-            background-color: #FFFFFF; /* Fundo branco */
+            background-color: #FFFFFF; /* Fundo branco para os banners */
             color: black;
             border: 1px solid #0056b3;
             box-sizing: border-box;
@@ -166,12 +167,16 @@
             <!-- Exemplo de banner para Vídeos -->
             <div class="banner">
                 <div class="banner-title">Nome do Vídeo 1</div>
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <div class="banner-message">Descrição breve do Vídeo 1.</div>
             </div>
             <div class="banner">
                 <div class="banner-title">Nome do Vídeo 2</div>
-                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <div class="banner-message">Descrição breve do Vídeo 2.</div>
             </div>
             <!-- Adicione mais banners conforme necessário -->
@@ -195,8 +200,6 @@
         </section>
     </div>
 
-    <footer>
-        <p>Para adicionar novos banners e vídeos, edite o código HTML diretamente.</p>
-    </footer>
+
 </body>
 </html>
