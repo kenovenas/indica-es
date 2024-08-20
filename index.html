@@ -17,32 +17,11 @@
             padding: 1em;
             text-align: center;
         }
-        #banner-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px;
-        }
-        .banner {
-            flex: 1 1 calc(20% - 10px); /* 5 banners por linha */
-            min-width: 150px;
-            max-width: 300px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: center;
-        }
-        .banner-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .banner-message {
-            margin-bottom: 10px;
-        }
         .tabs {
             overflow: hidden;
             background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
         }
         .tab-button {
             background-color: #ddd;
@@ -65,6 +44,29 @@
         }
         .active-tab {
             display: block;
+        }
+        #banner-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+        }
+        .banner {
+            flex: 1 1 calc(20% - 10px); /* 5 banners por linha */
+            min-width: 150px;
+            max-width: 300px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .banner-message {
+            margin-bottom: 10px;
         }
         footer {
             background-color: #f1f1f1;
@@ -96,38 +98,6 @@
         <h1>Página de Produtos</h1>
     </header>
 
-    <section id="banner-container">
-        <!-- Banner 1 -->
-        <div class="banner">
-            <div class="banner-title">Nome do Produto 1</div>
-            <div class="banner-message">Mensagem breve sobre o produto 1.</div>
-        </div>
-
-        <!-- Banner 2 -->
-        <div class="banner">
-            <div class="banner-title">Nome do Produto 2</div>
-            <div class="banner-message">Mensagem breve sobre o produto 2.</div>
-        </div>
-
-        <!-- Banner 3 -->
-        <div class="banner">
-            <div class="banner-title">Nome do Produto 3</div>
-            <div class="banner-message">Mensagem breve sobre o produto 3.</div>
-        </div>
-
-        <!-- Banner 4 -->
-        <div class="banner">
-            <div class="banner-title">Nome do Produto 4</div>
-            <div class="banner-message">Mensagem breve sobre o produto 4.</div>
-        </div>
-
-        <!-- Banner 5 -->
-        <div class="banner">
-            <div class="banner-title">Nome do Produto 5</div>
-            <div class="banner-message">Mensagem breve sobre o produto 5.</div>
-        </div>
-    </section>
-
     <div class="tabs">
         <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
         <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
@@ -137,31 +107,52 @@
     <!-- Seção Scripts -->
     <div id="scripts" class="tab-content active-tab">
         <h2>Scripts</h2>
-        <ul>
-            <li><a href="https://example.com/script1" target="_blank">Script 1</a></li>
-            <li><a href="https://example.com/script2" target="_blank">Script 2</a></li>
-            <li><a href="https://example.com/script3" target="_blank">Script 3</a></li>
-        </ul>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Scripts -->
+            <div class="banner">
+                <div class="banner-title">Nome do Script 1</div>
+                <div class="banner-message">Descrição breve do Script 1.</div>
+            </div>
+            <div class="banner">
+                <div class="banner-title">Nome do Script 2</div>
+                <div class="banner-message">Descrição breve do Script 2.</div>
+            </div>
+            <!-- Adicione mais banners conforme necessário -->
+        </section>
     </div>
 
     <!-- Seção Ferramentas -->
     <div id="tools" class="tab-content">
         <h2>Ferramentas</h2>
-        <ul>
-            <li><a href="https://example.com/tool1" target="_blank">Ferramenta 1</a></li>
-            <li><a href="https://example.com/tool2" target="_blank">Ferramenta 2</a></li>
-            <li><a href="https://example.com/tool3" target="_blank">Ferramenta 3</a></li>
-        </ul>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Ferramentas -->
+            <div class="banner">
+                <div class="banner-title">Nome da Ferramenta 1</div>
+                <div class="banner-message">Descrição breve da Ferramenta 1.</div>
+            </div>
+            <div class="banner">
+                <div class="banner-title">Nome da Ferramenta 2</div>
+                <div class="banner-message">Descrição breve da Ferramenta 2.</div>
+            </div>
+            <!-- Adicione mais banners conforme necessário -->
+        </section>
     </div>
 
     <!-- Seção Vídeos -->
     <div id="videos" class="tab-content">
         <h2>Vídeos</h2>
-        <ul>
-            <li><a href="https://example.com/video1" target="_blank">Vídeo 1</a></li>
-            <li><a href="https://example.com/video2" target="_blank">Vídeo 2</a></li>
-            <li><a href="https://example.com/video3" target="_blank">Vídeo 3</a></li>
-        </ul>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Vídeos -->
+            <div class="banner">
+                <div class="banner-title">Nome do Vídeo 1</div>
+                <div class="banner-message">Descrição breve do Vídeo 1.</div>
+            </div>
+            <div class="banner">
+                <div class="banner-title">Nome do Vídeo 2</div>
+                <div class="banner-message">Descrição breve do Vídeo 2.</div>
+            </div>
+            <!-- Adicione mais banners conforme necessário -->
+        </section>
     </div>
 
     <footer>
