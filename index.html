@@ -1,4 +1,63 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    
+    <!-- Estilo inicial para esconder o conteúdo da página -->
+    <style>
+        body {
+            display: none;
+        }
+        #adblock-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding-top: 20%;
+            z-index: 1000;
+        }
+    </style>
+
+    <!-- Script de detecção de Adblock -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Cria um elemento div que normalmente seria bloqueado pelo Adblock
+            var ad = document.createElement('div');
+            ad.className = 'ad-banner';
+            ad.style.display = 'none';
+            document.body.appendChild(ad);
+
+            // Verifica se o Adblock está bloqueando o conteúdo
+            if (ad.offsetHeight === 0) {
+                // Se o Adblock estiver ativo, exibe a mensagem de aviso
+                document.getElementById('adblock-message').style.display = 'block';
+            } else {
+                // Se o Adblock não estiver ativo, mostra o conteúdo da página
+                document.body.style.display = 'block';
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Mensagem de Adblock -->
+    <div id="adblock-message">Por favor, desative o Adblock para continuar usando o site.</div>
+    
+    <!-- Conteúdo do seu site -->
+    <h1>Bem-vindo ao meu site</h1>
+    <p>Este é o conteúdo principal do site.</p>
+</body>
+</html>
+
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -131,10 +190,6 @@
             event.currentTarget.className += " active";
         }
     </script>
-	
-<style>
-#g207{position:fixed!important;position:absolute;top:0;top:expression((t=document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop)+"px");left:0;width:100%;height:100%;background-color:#fff;opacity:0.9;filter:alpha(opacity=90);display:block}#g207 p{opacity:1;filter:none;font:bold 16px Verdana,Arial,sans-serif;text-align:center;margin:20% 0}#g207 p a,#g207 p i{font-size:12px}#g207 ~ *{display:none}
-</style>
 </head>
 <body>
     <header>
