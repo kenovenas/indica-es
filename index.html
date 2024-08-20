@@ -18,23 +18,28 @@
             text-align: center;
         }
         .tabs {
-            overflow: hidden;
+            display: flex;
             background-color: #f1f1f1;
             margin: 0;
             padding: 0;
         }
         .tab-button {
-            background-color: #ddd;
-            border: 1px solid #ccc;
+            background-color: #007BFF; /* Cor azul */
+            border: 1px solid #0056b3;
             border-bottom: none;
             cursor: pointer;
-            float: left;
             padding: 10px;
             text-align: center;
+            color: white;
             width: 33.33%;
+            box-sizing: border-box;
         }
         .tab-button:hover {
-            background-color: #ccc;
+            background-color: #0056b3;
+        }
+        .tab-button.active {
+            background-color: #0056b3;
+            font-weight: bold;
         }
         .tab-content {
             display: none;
