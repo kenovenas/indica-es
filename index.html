@@ -10,9 +10,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #007BFF; /* Fundo azul */
+            color: #000000; /* Texto preto */
         }
         header {
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Cor verde */
             color: white;
             padding: 1em;
             text-align: center;
@@ -46,6 +48,7 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-top: none;
+            background-color: #f1f1f1; /* Fundo claro para as seções */
         }
         .active-tab {
             display: block;
@@ -60,7 +63,7 @@
             flex: 1 1 calc(25% - 10px); /* 4 banners por linha */
             min-width: 200px;
             max-width: 300px;
-            background-color: #007BFF; /* Cor azul */
+            background-color: #FFFFFF; /* Fundo branco */
             color: black;
             border: 1px solid #0056b3;
             box-sizing: border-box;
@@ -68,10 +71,10 @@
             text-align: center;
         }
         .banner-title {
-            background-color: #FFFF00; /* Cor amarela */
-            color: #0000FF; /* Cor azul */
+            background-color: #4CAF50; /* Cor verde */
+            color: #FFFFFF; /* Texto branco */
             padding: 5px;
-            margin: -10px -10px 10px; /* Ajuste para que o fundo amarelo se estenda por todo o banner */
+            margin: -10px -10px 10px; /* Ajuste para que o fundo verde se estenda por todo o banner */
             font-size: 1.2em; /* Tamanho maior para o título */
             font-weight: bold;
         }
@@ -86,6 +89,17 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
         }
     </style>
     <script>
@@ -122,9 +136,7 @@
         <section id="banner-container">
             <!-- Exemplo de banner para Scripts -->
             <div class="banner">
-                <div class="banner-title">BitHub (Adicionado em 18/08) 1</div>
-                <p>Obs:</p>
-            <ol>
+                <div class="banner-title">BitHub (Adicionado em 18/08)</div>
                 <li>Editar linhas 19 e 20 com email e senha</li>
                 <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
                 <li>Requer uma chave para desbloquear as funções do script</li>
@@ -141,7 +153,6 @@
                 <span class="highlighted">script :</span><a href="https://cloaking.link/sm7Vuf" target="_blank">https://cloaking.link/sm7Vuf</a><br>
             </div>
         </div>
-            
             <div class="banner">
                 <div class="banner-title">Nome do Script 2</div>
                 <div class="banner-message">Descrição breve do Script 2.</div>
@@ -156,9 +167,10 @@
         <section id="banner-container">
             <!-- Exemplo de banner para Ferramentas -->
             <div class="banner">
-                <div class="banner-title">Nome da Ferramenta 1</div>
-                <div class="banner-message">Descrição breve da Ferramenta 1.</div>
-            </div>
+        <div class="links">
+            <span class="highlighted">RScaptcha:</span><a href="https://cloaking.link/0DgCf" target="_blank">https://cloaking.link/0DgCf</a><br>
+        </div>
+    </div>
             <div class="banner">
                 <div class="banner-title">Nome da Ferramenta 2</div>
                 <div class="banner-message">Descrição breve da Ferramenta 2.</div>
@@ -170,17 +182,11 @@
     <!-- Seção Vídeos -->
     <div id="videos" class="tab-content">
         <h2>Vídeos</h2>
-        <section id="banner-container">
-            <!-- Exemplo de banner para Vídeos -->
-            <div class="banner">
-                <div class="banner-title">Nome do Vídeo 1</div>
-                <div class="banner-message">Descrição breve do Vídeo 1.</div>
-            </div>
-            <div class="banner">
-                <div class="banner-title">Nome do Vídeo 2</div>
-                <div class="banner-message">Descrição breve do Vídeo 2.</div>
-            </div>
-            <!-- Adicione mais banners conforme necessário -->
+        <section class="video-container">
+            <!-- Exemplo de vídeo do YouTube -->
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/flpWRi7CqFQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+            <!-- Adicione mais vídeos conforme necessário -->
         </section>
     </div>
 
@@ -202,7 +208,7 @@
     </div>
 
     <footer>
-        <p>Para adicionar novos banners, edite o código HTML diretamente.</p>
+        <p>Para adicionar novos banners e vídeos, edite o código HTML diretamente.</p>
     </footer>
 </body>
 </html>
