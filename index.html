@@ -7,154 +7,237 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            color: #000000;
-            margin-left: 120px; /* Ajuste conforme necessário para evitar sobreposição com os botões laterais */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #FFFFFF; /* Fundo branco da página */
+            color: #000000; /* Texto preto */
         }
-
         header {
-            background-color: #008000;
-            color: #FFFFFF;
-            padding: 20px;
+            background-color: #4CAF50; /* Cor verde para o cabeçalho */
+            color: #FFFFFF; /* Texto branco no cabeçalho */
+            padding: 1em;
             text-align: center;
             position: relative;
         }
-
-        .telegram-group, .author {
-            background-color: #0000FF;
-            color: #FFFFFF;
-            padding: 10px;
-            position: absolute;
-            top: 10px;
-            font-size: 14px;
-        }
-
-        .author {
-            left: 10px;
-        }
-
-        .telegram-group {
-            right: 10px;
-        }
-
-        .section-buttons {
-            position: fixed;
-            top: 100px;
-            left: 10px;
+        .header-content {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
-
-        .section-buttons button {
-            background-color: #0000FF;
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100px;
+        .header-box {
+            background-color: #007BFF; /* Cor azul */
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #FFFFFF; /* Texto branco */
+            font-size: 1em;
         }
-
-        .tab-content {
-            padding: 20px;
-        }
-
-        .banner {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border: 2px solid #000000;
-            margin-bottom: 20px;
-        }
-
-        .banner-title {
-            background-color: #008000;
-            color: #000000;
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        .banner-message {
+        .welcome-message {
             margin-top: 10px;
-            font-size: 16px;
+            font-size: 1em;
+            color: #FFFFFF;
         }
-
-        footer {
+        .tabs {
+            display: flex;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .tab-button {
+            background-color: #007BFF; /* Cor azul */
+            border: 1px solid #0056b3;
+            border-bottom: none;
+            cursor: pointer;
+            padding: 10px;
             text-align: center;
+            color: white;
+            width: 25%; /* Ajustado para 4 seções */
+            box-sizing: border-box;
+        }
+        .tab-button:hover {
+            background-color: #0056b3;
+        }
+        .tab-button.active {
+            background-color: #0056b3;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
             padding: 20px;
-            background-color: #F8F8F8;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #FFFFFF; /* Fundo branco para as seções */
+        }
+        .active-tab {
+            display: block;
+        }
+        #banner-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+        }
+        .banner {
+            flex: 1 1 calc(25% - 10px); /* 4 banners por linha */
+            min-width: 200px;
+            max-width: 300px;
+            background-color: #FFFFFF; /* Fundo branco para os banners */
+            color: black;
+            border: 1px solid #0056b3;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px; /* Espaço abaixo dos banners */
+        }
+        .banner-title {
+            background-color: #4CAF50; /* Cor verde para o título */
+            color: #FFFFFF; /* Texto branco */
+            padding: 5px;
+            margin: -10px -10px 10px; /* Ajuste para que o fundo verde se estenda por todo o banner */
+            font-size: 1.2em; /* Tamanho maior para o título */
+            font-weight: bold;
+        }
+        .banner-message {
+            font-size: 0.9em; /* Texto menor */
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
         }
     </style>
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
 </head>
 <body>
-
     <header>
-        <div class="author">Keno Venas</div>
-        <div class="telegram-group">
-            <a href="https://t.me/+Mns6IsONSxliZDkx" target="_blank" style="color: #FFFFFF; text-decoration: none;">Grupo do Telegram</a>
+        <div class="header-content">
+            <div class="header-box">Keno Venas</div>
+            <div class="header-box">
+                <a href="https://t.me/+Mns6IsONSxliZDkx" target="_blank" style="color: #FFFFFF;">Grupo do Telegram</a>
+            </div>
         </div>
         <h1>Página de Produtos</h1>
-        <p>Olá seja bem vindo ao nosso site de ferramentas para automação!<br>
-        Aqui você encontrará soluções incríveis para maximizar seus ganhos e automatizar suas faucets, aumentando sua renda extra.<br>
-        Estamos aqui para tornar sua jornada mais eficiente e lucrativa. Aproveite!!!</p>
+        <p class="welcome-message">
+           <p>Olá seja bem vindo ao nosso site de ferramentas para automação!</p>
+<p>Aqui você encontará soluções incríveis para maximizar seus ganhos</p>
+<p>e automatizar suas faucets aumentando sua renda extra.</p>
+<p>Estamos aqui para tornar sua jornada mais eficiente e lucrativa.</p>
+                  <p>Aproveite!!!!</p>      
+    </p>
     </header>
 
-    <!-- Botões de Seções -->
-    <div class="section-buttons">
-        <button onclick="showTab('tools')">Ferramentas</button>
-        <button onclick="showTab('scripts')">Scripts</button>
-        <button onclick="showTab('videos')">Vídeos</button>
+    <div class="tabs">
+        <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
+        <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
+        <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
+        <div class="tab-button" onclick="openTab('outros')">Outros</div> <!-- Adicionado a seção Outros -->
     </div>
 
-    <!-- Conteúdo das Seções -->
-    <div id="tools" class="tab-content">
-        <h2>Ferramentas</h2>
-        <section id="banner-container">
-            <div class="banner">
-                <div class="banner-title">Nome da Ferramenta 1</div>
-                <div class="banner-message">Descrição breve da Ferramenta 1.</div>
-            </div>
-            <!-- Adicione mais banners conforme necessário -->
-        </section>
-    </div>
-
-    <div id="scripts" class="tab-content" style="display:none;">
+    <!-- Seção Scripts -->
+    <div id="scripts" class="tab-content active-tab">
         <h2>Scripts</h2>
         <section id="banner-container">
+            <!-- Exemplo de banner para Scripts -->
             <div class="banner">
                 <div class="banner-title">Nome do Script 1</div>
                 <div class="banner-message">Descrição breve do Script 1.</div>
             </div>
+            <div class="banner">
+                <div class="banner-title">Nome do Script 2</div>
+                <div class="banner-message">Descrição breve do Script 2.</div>
+            </div>
             <!-- Adicione mais banners conforme necessário -->
         </section>
     </div>
 
-    <div id="videos" class="tab-content" style="display:none;">
+    <!-- Seção Ferramentas -->
+    <div id="tools" class="tab-content">
+    <h2>Ferramentas</h2>
+    <section id="banner-container">
+        <!-- Exemplo de banner para Ferramentas com link clicável -->
+        <a href="https://exemplo.com/ferramenta1" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Nome da Ferramenta 1</div>
+                <div class="banner-message">Descrição breve da Ferramenta 1.</div>
+            </div>
+        </a>
+        <a href="https://exemplo.com/ferramenta2" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Nome da Ferramenta 2</div>
+                <div class="banner-message">Descrição breve da Ferramenta 2.</div>
+            </div>
+        </a>
+        <!-- Adicione mais banners conforme necessário -->
+    </section>
+</div>
+
+
+    <!-- Seção Vídeos -->
+    <div id="videos" class="tab-content">
         <h2>Vídeos</h2>
         <section id="banner-container">
+            <!-- Exemplo de banner para Vídeos -->
             <div class="banner">
                 <div class="banner-title">Nome do Vídeo 1</div>
-                <div class="banner-message">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
                 </div>
+                <div class="banner-message">Descrição breve do Vídeo 1.</div>
+            </div>
+            <div class="banner">
+                <div class="banner-title">Nome do Vídeo 2</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Descrição breve do Vídeo 2.</div>
+            </div>
+            <!-- Adicione mais banners conforme necessário -->
+        </section>
+    </div>
+
+    <!-- Seção Outros -->
+    <div id="outros" class="tab-content">
+        <h2>Outros</h2>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Outros -->
+            <div class="banner">
+                <div class="banner-title">Nome do Outro Produto 1</div>
+                <div class="banner-message">Descrição breve do Outro Produto 1.</div>
+            </div>
+            <div class="banner">
+                <div class="banner-title">Nome do Outro Produto 2</div>
+                <div class="banner-message">Descrição breve do Outro Produto 2.</div>
             </div>
             <!-- Adicione mais banners conforme necessário -->
         </section>
     </div>
 
     <footer>
-        &copy; 2024 Seu Site. Todos os direitos reservados.
+        © 2024 Seu Site. Todos os direitos reservados.
     </footer>
-
-    <script>
-        function showTab(tabId) {
-            var tabs = document.getElementsByClassName('tab-content');
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = 'none';
-            }
-            document.getElementById(tabId).style.display = 'block';
-        }
-    </script>
-
 </body>
 </html>
