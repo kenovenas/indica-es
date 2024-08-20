@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site</title>
-    
-    <!-- Estilo inicial para esconder o conteúdo da página -->
     <style>
         body {
-            display: none;
+            display: none; /* Oculta o conteúdo até que o JavaScript determine se o Adblock está ativo */
         }
         #adblock-message {
-            display: none;
+            display: none; /* Oculta a mensagem de Adblock por padrão */
             position: fixed;
             top: 0;
             left: 0;
@@ -24,122 +22,16 @@
             padding-top: 20%;
             z-index: 1000;
         }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #FFFFFF;
-            color: #000000;
-        }
         header {
             background-color: #4CAF50;
             color: #FFFFFF;
             padding: 1em;
             text-align: center;
-            position: relative;
         }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .header-box {
-            background-color: #007BFF;
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: #FFFFFF;
-            font-size: 1em;
-        }
-        .welcome-message {
-            margin-top: 10px;
-            font-size: 1em;
-            color: #FFFFFF;
-        }
-        .tabs {
-            display: flex;
-            background-color: #f1f1f1;
-            margin: 0;
-            padding: 0;
-        }
-        .tab-button {
-            background-color: #007BFF;
-            border: 1px solid #0056b3;
-            border-bottom: none;
-            cursor: pointer;
-            padding: 10px;
-            text-align: center;
-            color: white;
-            width: 25%;
-            box-sizing: border-box;
-        }
-        .tab-button:hover {
-            background-color: #0056b3;
-        }
-        .tab-button.active {
-            background-color: #0056b3;
-            font-weight: bold;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-top: none;
-            background-color: #FFFFFF;
-        }
-        .active-tab {
-            display: block;
-        }
-        #banner-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px;
-        }
-        .banner {
-            flex: 1 1 calc(25% - 10px);
-            min-width: 200px;
-            max-width: 300px;
-            background-color: #FFFFFF;
-            color: black;
-            border: 1px solid #0056b3;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .banner-title {
-            background-color: #4CAF50;
-            color: #FFFFFF;
-            padding: 5px;
-            margin: -10px -10px 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .banner-message {
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: #f1f1f1;
-            padding: 1em;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .video-container iframe {
-            width: 100%;
-            max-width: 300px;
-            height: 200px;
-        }
+        /* Estilos adicionais... */
     </style>
-
-    <!-- Script de detecção de Adblock -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Cria um elemento div que normalmente seria bloqueado pelo Adblock
             var ad = document.createElement('div');
             ad.className = 'ad-banner';
             ad.style.position = 'absolute';
@@ -150,80 +42,21 @@
             ad.style.overflow = 'hidden';
             document.body.appendChild(ad);
 
-            // Verifica se o Adblock está bloqueando o conteúdo
             setTimeout(function() {
                 if (ad.offsetHeight === 0) {
-                    // Se o Adblock estiver ativo, exibe a mensagem de aviso
                     document.getElementById('adblock-message').style.display = 'block';
                 } else {
-                    // Se o Adblock não estiver ativo, mostra o conteúdo da página
                     document.body.style.display = 'block';
                 }
-            }, 100); // Espera um curto período para garantir a detecção
+            }, 100);
         });
     </script>
 </head>
 <body>
-    <!-- Mensagem de Adblock -->
     <div id="adblock-message">Por favor, desative o Adblock para continuar usando o site.</div>
-    
-    <!-- Conteúdo do seu site -->
     <header>
-        <div class="header-content">
-            <div class="header-box">Keno Venas</div>
-            <div class="header-box">
-                <a href="https://t.me/+Mns6IsONSxliZDkx" target="_blank" style="color: #FFFFFF;">Grupo do Telegram</a>
-            </div>
-        </div>
-        <h1>"Crypto Faucets"</h1>
-        <p class="welcome-message">
-            <p>Olá seja bem-vindo ao nosso site de ferramentas para automação!</p>
-            <p>Aqui você encontrará soluções incríveis para maximizar seus ganhos e automatizar suas faucets aumentando sua renda extra.</p>
-            <p>Estamos aqui para tornar sua jornada mais eficiente e lucrativa.</p>
-            <p>Aproveite!!!!</p>
-        </p>
+        <h1>Bem-vindo ao Meu Site</h1>
     </header>
-
-    <div class="tabs">
-        <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
-        <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
-        <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
-        <div class="tab-button" onclick="openTab('outros')">Outros</div>
-    </div>
-
-    <!-- SEÇÃO POSTE -->
-    <div id="scripts" class="tab-content active-tab">
-        <h2>Scripts</h2>
-        <section id="banner-container">
-            <!-- Exemplo de banner para Scripts -->
-            <div class="banner">
-                <div class="banner-title">BitHub (Adicionado em 18/08)</div>
-                <p>Obs:</p>
-                <ol>
-                    <li>Editar linhas 19 e 20 com email e senha</li>
-                    <li>Remover ou incluir shorts a partir da linha 22 remove ou inclui shorts desejados no site</li>
-                    <li>Requer uma chave para desbloquear as funções do script</li>
-                    <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
-                    <li>Tipo de captcha: RScaptcha</li>
-                    <li>Executar usando o Violentmonkey</li>
-                    <li>Usar extensão Cors</li>
-                    <li>Material necessário na seção ferramentas</li>
-                    <li>Verificar seção ferramentas</li>
-                </ol>
-                <p>Funções do script: PTC e Sortlinks</p>
-                <div class="links">
-                    <span class="highlighted">site:</span><a href="https://bithub.win/?r=373106" target="_blank">https://bithub.win/?r=373106</a><br>
-                    <span class="highlighted">script:</span><a href="https://cloaking.link/sm7Vuf" target="_blank">https://cloaking.link/sm7Vuf</a><br>
-                </div>
-            </div>
-
-            <!-- Adicione os outros banners aqui -->
-
-        </section>
-    </div>
-
-    <footer>
-        <p>© 2024 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Conteúdo da página -->
 </body>
 </html>
