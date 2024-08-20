@@ -150,20 +150,23 @@
             var adblockTest = document.createElement('div');
             adblockTest.innerHTML = '&nbsp;';
             adblockTest.className = 'adsbox';
+            adblockTest.style.position = 'absolute';
+            adblockTest.style.left = '-9999px';
             document.body.appendChild(adblockTest);
 
             window.onload = function() {
                 setTimeout(function() {
                     if (adblockTest.offsetHeight === 0) {
                         document.getElementById('adblock-message').style.display = 'block';
+                        document.querySelector('.content').style.display = 'none';
                     } else {
                         document.querySelector('.content').style.display = 'block';
+                        document.getElementById('adblock-message').style.display = 'none';
                     }
                     document.body.removeChild(adblockTest);
                 }, 100);
             };
         })();
     </script>
-    <script type='text/javascript' src='//spiceoptimistic.com/6a/26/58/6a2658df77ae325b7cd45e502e22f9e6.js'></script>
 </body>
 </html>
