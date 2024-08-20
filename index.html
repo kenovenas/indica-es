@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Vendas</title>
+    <title>Página de Produtos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,13 +37,28 @@
             width: 100%;
             height: auto;
         }
-        .banner-name {
-            margin-top: 5px;
-        }
-        .banner-name a {
-            text-decoration: none;
-            color: #4CAF50;
+        .banner-title {
             font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .banner-message {
+            margin-bottom: 10px;
+        }
+        .section {
+            padding: 20px;
+            border-top: 2px solid #4CAF50;
+        }
+        .section h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
         }
         footer {
             background-color: #f1f1f1;
@@ -57,64 +72,76 @@
 </head>
 <body>
     <header>
-        <h1>Tem de Tudo</h1>
+        <h1>Página de Produtos</h1>
     </header>
+
     <section id="banner-container">
         <!-- Banner 1 -->
         <div class="banner">
-            <div class="banner-content">
-                <!-- Teste com uma imagem placeholder -->
-                <img src="https://viefaucet.com/banners/300x250.gif" alt="Produto 1">
-            </div>
-            <div class="banner-name">
-                <a href="https://example.com/produto1" target="_blank">Nome do Produto 1</a>
-            </div>
+            <div class="banner-title">Nome do Produto 1</div>
+            <div class="banner-message">Mensagem breve sobre o produto 1.</div>
+            <img src="https://via.placeholder.com/300x200?text=Banner+1" alt="Produto 1">
         </div>
 
         <!-- Banner 2 -->
         <div class="banner">
-            <div class="banner-content">
-                <!-- Teste com uma imagem placeholder -->
-                <img src="https://via.placeholder.com/300x200?text=Banner+2" alt="Produto 2">
-            </div>
-            <div class="banner-name">
-                <a href="https://example.com/produto2" target="_blank">Nome do Produto 2</a>
-            </div>
+            <div class="banner-title">Nome do Produto 2</div>
+            <div class="banner-message">Mensagem breve sobre o produto 2.</div>
+            <img src="https://via.placeholder.com/300x200?text=Banner+2" alt="Produto 2">
         </div>
 
         <!-- Banner 3 -->
         <div class="banner">
-            <div class="banner-content">
-                <!-- Teste com uma imagem placeholder -->
-                <img src="https://via.placeholder.com/300x200?text=Banner+3" alt="Produto 3">
-            </div>
-            <div class="banner-name">
-                <a href="https://example.com/produto3" target="_blank">Nome do Produto 3</a>
-            </div>
+            <div class="banner-title">Nome do Produto 3</div>
+            <div class="banner-message">Mensagem breve sobre o produto 3.</div>
+            <img src="https://via.placeholder.com/300x200?text=Banner+3" alt="Produto 3">
         </div>
 
         <!-- Banner 4 -->
         <div class="banner">
-            <div class="banner-content">
-                <!-- Teste com uma imagem placeholder -->
-                <img src="https://via.placeholder.com/300x200?text=Banner+4" alt="Produto 4">
-            </div>
-            <div class="banner-name">
-                <a href="https://example.com/produto4" target="_blank">Nome do Produto 4</a>
-            </div>
+            <div class="banner-title">Nome do Produto 4</div>
+            <div class="banner-message">Mensagem breve sobre o produto 4.</div>
+            <img src="https://via.placeholder.com/300x200?text=Banner+4" alt="Produto 4">
         </div>
 
         <!-- Banner 5 -->
         <div class="banner">
-            <div class="banner-content">
-                <!-- Teste com uma imagem placeholder -->
-                <img src="https://via.placeholder.com/300x200?text=Banner+5" alt="Produto 5">
-            </div>
-            <div class="banner-name">
-                <a href="https://example.com/produto5" target="_blank">Nome do Produto 5</a>
-            </div>
+            <div class="banner-title">Nome do Produto 5</div>
+            <div class="banner-message">Mensagem breve sobre o produto 5.</div>
+            <img src="https://via.placeholder.com/300x200?text=Banner+5" alt="Produto 5">
         </div>
     </section>
+
+    <!-- Seção Scripts -->
+    <section class="section" id="scripts">
+        <h2>Scripts</h2>
+        <ul>
+            <li><a href="https://example.com/script1" target="_blank">Script 1</a></li>
+            <li><a href="https://example.com/script2" target="_blank">Script 2</a></li>
+            <li><a href="https://example.com/script3" target="_blank">Script 3</a></li>
+        </ul>
+    </section>
+
+    <!-- Seção Ferramentas -->
+    <section class="section" id="tools">
+        <h2>Ferramentas</h2>
+        <ul>
+            <li><a href="https://example.com/tool1" target="_blank">Ferramenta 1</a></li>
+            <li><a href="https://example.com/tool2" target="_blank">Ferramenta 2</a></li>
+            <li><a href="https://example.com/tool3" target="_blank">Ferramenta 3</a></li>
+        </ul>
+    </section>
+
+    <!-- Seção Vídeos -->
+    <section class="section" id="videos">
+        <h2>Vídeos</h2>
+        <ul>
+            <li><a href="https://example.com/video1" target="_blank">Vídeo 1</a></li>
+            <li><a href="https://example.com/video2" target="_blank">Vídeo 2</a></li>
+            <li><a href="https://example.com/video3" target="_blank">Vídeo 3</a></li>
+        </ul>
+    </section>
+
     <footer>
         <p>Para adicionar novos banners, edite o código HTML diretamente.</p>
     </footer>
