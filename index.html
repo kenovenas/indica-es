@@ -1,39 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Banner do Telegram no canto superior direito -->
-    <div class="banner-telegram">
-        <a href="https://t.me/+Mns6IsONSxliZDkx" class="banner-link" target="_blank">Grupo do Telegram</a>
-    </div>
-
-    <!-- Banner do autor no canto superior esquerdo -->
-    <div class="banner-author">
-        <span class="author-text">Keno Venas</span>
-    </div>
-
-    <!-- O restante do seu conteúdo da página vai aqui -->
-   <p>Olá seja bem vindo ao nosso site de ferramentas para automação!</p>
-<p>Aqui você encontará soluções incríveis para maximizar seus ganhos</p>
-<p>e automatizar suas faucets aumentando sua renda extra.</p>
-<p>Estamos aqui para tornar sua jornada mais eficiente e lucrativa.</p>
-                  <p>Aproveite!!!!</p>
-    
-
-    <!-- Script da Hydro -->
-    <script id="hydro_config" type="text/javascript">
-        window.Hydro_tagId = "53edc452-f898-48fd-95f2-75141a991de6";
-    </script>
-    <script id="hydro_script" src="https://track.hydro.online/" async></script>
-</body>
-</html>
-    
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -54,7 +18,27 @@
             color: #FFFFFF; /* Texto branco no cabeçalho */
             padding: 1em;
             text-align: center;
-            margin-bottom: 20px;
+            position: relative;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .header-content .left, .header-content .right {
+            color: #FFFFFF;
+        }
+        .header-content .left {
+            font-size: 1em;
+        }
+        .header-content .right {
+            font-size: 1em;
+        }
+        .welcome-message {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #FFFFFF;
         }
         .tabs {
             display: flex;
@@ -121,8 +105,7 @@
             margin-bottom: 10px;
         }
         footer {
-            background-color: #007BFF; /* Cor azul para o rodapé */
-            color: #FFFFFF; /* Texto branco */
+            background-color: #f1f1f1;
             padding: 1em;
             text-align: center;
             position: fixed;
@@ -153,7 +136,16 @@
 </head>
 <body>
     <header>
+        <div class="header-content">
+            <div class="left">Keno Venas</div>
+            <div class="right">
+                <a href="https://t.me/+Mns6IsONSxliZDkx" target="_blank" style="color: #FFFFFF;">Grupo do Telegram</a>
+            </div>
+        </div>
         <h1>Página de Produtos</h1>
+        <p class="welcome-message">
+            Olá, seja bem-vindo ao nosso site de ferramentas para automação! Aqui você encontrará soluções incríveis para maximizar seus ganhos e automatizar suas faucets, aumentando sua renda extra. Estamos aqui para tornar sua jornada mais eficiente e lucrativa. Aproveite!!!
+        </p>
     </header>
 
     <div class="tabs">
@@ -237,5 +229,8 @@
         </section>
     </div>
 
+    <footer>
+        © 2024 Seu Site. Todos os direitos reservados.
+    </footer>
 </body>
 </html>
