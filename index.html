@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #FFFFFF;
-            color: #000000;
+            background-color: #FFFFFF; /* Fundo branco da página */
+            color: #000000; /* Texto preto */
         }
         header {
-            background-color: #4CAF50;
-            color: #FFFFFF;
+            background-color: #4CAF50; /* Cor verde para o cabeçalho */
+            color: #FFFFFF; /* Texto branco no cabeçalho */
             padding: 1em;
             text-align: center;
             position: relative;
@@ -27,10 +27,10 @@
             padding: 0 20px;
         }
         .header-box {
-            background-color: #007BFF;
+            background-color: #007BFF; /* Cor azul */
             padding: 5px 10px;
             border-radius: 5px;
-            color: #FFFFFF;
+            color: #FFFFFF; /* Texto branco */
             font-size: 1em;
         }
         .welcome-message {
@@ -45,14 +45,14 @@
             padding: 0;
         }
         .tab-button {
-            background-color: #007BFF;
+            background-color: #007BFF; /* Cor azul */
             border: 1px solid #0056b3;
             border-bottom: none;
             cursor: pointer;
             padding: 10px;
             text-align: center;
             color: white;
-            width: 25%;
+            width: 25%; /* Ajustado para 4 seções */
             box-sizing: border-box;
         }
         .tab-button:hover {
@@ -67,7 +67,7 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-top: none;
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Fundo branco para as seções */
         }
         .active-tab {
             display: block;
@@ -79,33 +79,33 @@
             padding: 10px;
         }
         .banner {
-            flex: 1 1 calc(25% - 10px);
+            flex: 1 1 calc(25% - 10px); /* 4 banners por linha */
             min-width: 200px;
             max-width: 300px;
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Fundo branco para os banners */
             color: black;
             border: 1px solid #0056b3;
             box-sizing: border-box;
             padding: 10px;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Espaço abaixo dos banners */
         }
         .banner-title {
-            background-color: #4CAF50;
-            color: #FFFFFF;
+            background-color: #4CAF50; /* Cor verde para o título */
+            color: #FFFFFF; /* Texto branco */
             padding: 5px;
-            margin: -10px -10px 10px;
-            font-size: 1.2em;
+            margin: -10px -10px 10px; /* Ajuste para que o fundo verde se estenda por todo o banner */
+            font-size: 1.2em; /* Tamanho maior para o título */
             font-weight: bold;
         }
         .banner-message {
-            font-size: 0.9em;
+            font-size: 0.9em; /* Texto menor */
             margin-bottom: 10px;
         }
         footer {
             background-color: #f1f1f1;
             padding: 0.3em;
-            text-align: left;
+            text-align:  left;
             position: fixed;
             width: auto;
             bottom: 0;
@@ -142,40 +142,41 @@
         </div>
         <h1>"Crypto Faucets"</h1>
         <p class="welcome-message">
-            Olá seja bem vindo ao nosso site de ferramentas para automação!<br>
-            Aqui você encontrará soluções incríveis para maximizar seus ganhos<br>
-            e automatizar suas faucets aumentando sua renda extra.<br>
-            Estamos aqui para tornar sua jornada mais eficiente e lucrativa.<br>
-            Aproveite!!!!
-        </p>
+           <p>Olá seja bem vindo ao nosso site de ferramentas para automação!</p>
+<p>Aqui você encontará soluções incríveis para maximizar seus ganhos</p>
+<p>e automatizar suas faucets aumentando sua renda extra.</p>
+<p>Estamos aqui para tornar sua jornada mais eficiente e lucrativa.</p>
+                  <p>Aproveite!!!!</p>      
+    </p>
     </header>
 
     <div class="tabs">
         <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
         <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
         <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
-        <div class="tab-button" onclick="openTab('outros')">Outros</div>
+        <div class="tab-button" onclick="openTab('outros')">Outros</div> <!-- Adicionado a seção Outros -->
     </div>
 
+    <!-- SEÇÃO POSTE -->
     <div id="scripts" class="tab-content active-tab">
         <h2>Scripts</h2>
         <section id="banner-container">
-            <div class="banner">
+            <!-- Exemplo de banner para Scripts -->
+        <div class="banner">
                 <div class="banner-title">fire faucet (Adicionado em 20/08)</div>
-                <p>Obs:</p>
-                <ol>
-                    <li>Login manual</li>
-                    <li>Removendo ou incluindo shorts a partir da linha 22 remove ou inclui shorts indesejados no site</li>
-                    <li>Tipo de captcha: Cpacha premium na seção ferramentas.</li>
-                    <li>Executar usando o Violentmonkey</li>
-                    <li>Usar extensão Cors</li>
-                    <li>Verificar seção ferramentas</li>
-                    <li>Não criei, apenas repassando.</li>
-                    <li>Caso precise de vídeo explicativo sobre o script, basta pedir no grupo do Telegram.</li>
-                </ol>
-                <p>Funções do script: Daily Bonus, Faucet, Level Reward, PTC e ShortLinks</p>
-        
-    <meta charset="UTF-8">
+                 <p>Obs:</p>
+            <ol>
+                <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                <li>Tipo de captcha: Cpacha premium na seção ferramenats.</li>
+                <li>Executar usando o Violentmonkey</li>
+                <li>Usar extensao Cors</li>
+                <li>Verificar seção ferramentas</li>
+                <li>Não criei apenas repassando.</li>
+                <li>Caso precise de video explicativo sobre o script basta pedir no grupo do telegram.s</li>
+            </ol>
+            <p>Funções do script: Dayli Bonus, Faucet, Level Reward, PTC e ShortLinks</p>
+             <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo de Botões com Links</title>
     <style>
@@ -191,20 +192,458 @@
             margin: 5px;
         }
     </style>
-    <a href="URL_DO_SCRIPT" class="btn" target="_blank">script</a>
+</head>
+<body>
+    <a href="https://cloaking.link/EKisDFAI" class="btn" target="_blank">script</a><a href="https://firefaucet.win/ref/1122368" class="btn" target="_blank">Cadastro</a>
 
+             
+            
+              <div class="banner">
+                <div class="banner-title">BitHub (Adicionado em 18/08)</div>
+                 <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 19 e 20 com email e senha</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: RScaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                <li>Usar extensao Cors</li>
+                <li>Material necessário na seção ferramentas</li>
+                <li>Verificar seção ferramentas</li>
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+            <div class="links">
+                <span class="highlighted">site:</span><a href="https://bithub.win/?r=373106" target="_blank">https://bithub.win/?r=373106</a><br>
+                <span class="highlighted">script :</span><a href="https://cloaking.link/sm7Vuf" target="_blank">https://cloaking.link/sm7Vuf</a><br>
+            </div>
+        </div>
+            
+            <div class="banner">
+                <div class="banner-title">CoinMaster (Adicionado em 17/08)</div>
+               <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 19 e 20 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                <li>Assistir o vídeo para entender como converter saldo e ter lucro</li>
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+            <div class="links">
+                <span class="highlighted">site:</span><a href="https://coinmasters.online/?r=7873" target="_blank">https://coinmasters.online/?r=7873</a><br>
+                <span class="highlighted">script :</span><a href="https://cloaking.link/dzZ7iF" target="_blank">https://cloaking.link/dzZ7iF</a><br>
+            </div>
+        </div>
 
+             <div class="banner">
+                <div class="banner-title">Viefaucet (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: Upside-Down</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://viefaucet.com?r=639b5541044da56661e2b7b9" target="_blank">https://viefaucet.com?r=639b5541044da56661e2b7b9</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/z77T4" target="_blank">https://cloaking.link/z77T4</a><br>
+            </div>
+        </div>
 
+             <div class="banner">
+                <div class="banner-title">Coinpayz (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Editar email e senha linhas 20 e 21</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: hcptcha Upside-Down</li>
+                <li>Usar MultiBot</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://coinpayz.xyz/?r=605941" target="_blank">https://coinpayz.xyz/?r=605941</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/br7nDrvR" target="_blank">https://cloaking.link/br7nDrvR</a><br>
+          </div>
+        </div>
 
-            <!-- Repeat the above banner structure for other scripts -->
+             <div class="banner">
+                <div class="banner-title">Coinymate (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: sem captcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href=" https://coinymate.com/?r=4730" target="_blank"> https://coinymate.com/?r=4730</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/cwQ7oZcm" target="_blank">https://cloaking.link/br7nDrvR</a><br>
+            </div>
+        </div>
 
+             <div class="banner">
+                <div class="banner-title">ClaimBits (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 19 e 20</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: incocaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://claimbits.net/?ref=302900" target="_blank">https://claimbits.net/?ref=302900</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/zfgcG" target="_blank">https://cloaking.link/zfgcG</a><br>
+            </div>
+        </div>
+
+             <div class="banner">
+                <div class="banner-title">FreeBonk (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha, incocaptcha e antibot</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC, Sortlinks e faucet</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://free-bonk.com/?r=57612" target="_blank">https://free-bonk.com/?r=57612</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/GiIuBgxd" target="_blank">https://cloaking.link/GiIuBgxd</a><br>
+               <span class="highlighted">Adicional bonk:</span><a href="https://cloaking.link/LhbfliHt" target="_blank">https://cloaking.link/LhbfliHt</a><br>
+            </div>
+        </div>
+
+             <div class="banner">
+                <div class="banner-title">Claimcoin (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 18 e 19</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://claimcoin.in/?r=24694" target="_blank">https://claimcoin.in/?r=24694</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/w72slsn" target="_blank">https://cloaking.link/w72slsn</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">EarnPepe (Adicionado em 17/08)</div>
+               <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://earn-pepe.com/?ref=pf4Em" target="_blank">https://earn-pepe.com/?ref=pf4Em</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/ttxx4" target="_blank">https://cloaking.link/ttxx4</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">freebnbcoin (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://www.freebnbcoin.com/?r=198251" target="_blank">https://www.freebnbcoin.com/?r=198251</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/z7p65Xv" target="_blank">https://cloaking.link/z7p65Xv</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">feyorra site (Adicionado em 17/08)</div>
+              <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://feyorra.site/?ref=wAXyhT" target="_blank">https://feyorra.site/?ref=wAXyhT</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/SzuGAZY" target="_blank">https://cloaking.link/SzuGAZY</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">Lite faucet (Adicionado em 17/08)</div>
+             <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://litefaucet.in/?r=37967" target="_blank">https://litefaucet.in/?r=37967</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/jbNZQu" target="_blank">https://cloaking.link/jbNZQu</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">PepyMonster (Adicionado em 17/08)</div>
+               <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script:  Daile bonus, PTC , Sortlinks e Coletar recompensas</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://pepy.monster/?r=2428" target="_blank">https://pepy.monster/?r=2428</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/KFe2l" target="_blank">https://cloaking.link/KFe2l</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">BananoFaucet (Adicionado em 17/08)</div>
+             <p>Obs:</p>
+            <ol>
+                <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://banfaucet.com/?r=186656" target="_blank">https://banfaucet.com/?r=186656</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/oyObF9" target="_blank">https://cloaking.link/oyObF9</a><br>
+            </div>
+        </div>
+
+            <div class="banner">
+                <div class="banner-title">AutoFaucet (Adicionado em 17/08)</div>
+               <p>Obs:</p>
+            <ol>
+                <li>fazer login manual</li>
+                <li> favoritar os shorts que deseja fazer</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Executar usando o Violentmonkey</li>
+                
+            </ol>
+            <p>Funções do script: PTC e Sortlinks</p>
+             <div class="links">
+               <span class="highlighted">Site:</span><a href="https://autofaucet.org/r/elemesmo" target="_blank">https://autofaucet.org/r/elemesmo</a><br>
+               <span class="highlighted">Script:</span><a href="https://cloaking.link/AyTOw" target="_blank">https://cloaking.link/AyTOw</a><br>
+            </div>
+        </div>
+    </div>
+            
+            <!-- Adicione mais banners conforme necessário -->
         </section>
     </div>
 
-    <!-- Add content for other tabs here -->
-    
+    <!-- FERRAMENTAS -->
+    <div id="tools" class="tab-content">
+    <h2>Ferramentas</h2>
+    <section id="banner-container">
+        <!-- Exemplo de banner para Ferramentas com link clicável -->
+        
+       <a href="https://cloaking.link/Z2d74Q" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Premium Captchasolver</div>
+                <div class="banner-message">Lique aqui:)</div>
+            </div>
+        </a>
+
+        <a href="https://cloaking.link/PzSa" target="_blank">
+            <div class="banner">
+                <div class="banner-title">RScaptcha</div>
+                <div class="banner-message">Lique aqui:)</div>
+            </div>
+        </a>
+        
+        <a href="https://cloaking.link/sq27xH" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Cors</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+        <a href="https://cloaking.link/fYt6" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Multibot 2.6.2</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+        <a href="https://cloaking.link/aH0F0eF" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Filtro atualizado 15/08</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+        <a href="https://cloaking.link/u35slGbm" target="_blank">
+            <div class="banner">
+                <div class="banner-title">fly inc</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+        <a href="https://cuty.io/E7bnrRLSon6n" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Violentmonkey</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+        <a href="https://cloaking.link/NJst6rn" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Incocaptcha v4</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+         <a href="https://cloaking.link/uOzGpF7u" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Icon Captcha Solver new lite</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+
+         <a href="https://cloaking.link/X2nt" target="_blank">
+            <div class="banner">
+                <div class="banner-title">Urban vpn mais de 50 ips</div>
+                <div class="banner-message">Lique aqui:).</div>
+            </div>
+        </a>
+        <!-- Adicione mais banners conforme necessário -->
+    </section>
+</div>
+
+
+    <!-- VIDEOS -->
+    <div id="videos" class="tab-content">
+        <h2>Vídeos</h2>
+        <section id="banner-container">
+
+           <div class="banner">
+                <div class="banner-title">Prova de pagamento.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sDUN1fHOq9o" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">4 dolares no automatico. </div>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Uma das melhores faucets.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/NtXtvuWRyu4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Faucet pagando em varias cripto moedas no automatico</div>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Mienração totalmente free.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/flpWRi7CqFQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Faucet com ganhos de mineração totalmente free no automatico</div>
+            </div>
+
+             <div class="banner">
+                <div class="banner-title">Tudo pronto para lucrar.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/XJ9DanfE_F4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Configurando navegador para automação de faucets !!!</div>
+            </div>
+            <!-- Adicione mais banners conforme necessário -->
+        </section>
+    </div>
+
+    <!-- OUTROS -->
+    <div id="em andamento" class="tab-content">
+        <h2>em andamento</h2>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Outros -->
+            <div class="banner">
+                <div class="banner-title"></div>
+                <div class="banner-message"></div>
+            </div>
+            <div class="banner">
+                <div class="banner-title"></div>
+                <div class="banner-message"></div>
+            </div>
+            <!-- Adicione mais banners conforme necessário -->
+        </section>
+    </div>
+
     <footer>
-        <p>© 2024 Crypto Faucets. All rights reserved.</p>
+        © 2024 Faucet Crypto. Todos os direitos reservados.
     </footer>
+    
+    <!-- ANUNCIOS -->
+    <script type="text/javascript">
+	atOptions = {
+		'key' : 'a94736b5f9dee93d2a329e62e4108e38',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//spiceoptimistic.com/a94736b5f9dee93d2a329e62e4108e38/invoke.js"></script>
+    <script type='text/javascript' src='//spiceoptimistic.com/56/5b/f6/565bf68f96dae3dff2075e88e5f97b8e.js'></script>
+	<script type='text/javascript' src='//spiceoptimistic.com/91/50/7c/91507cf5c49852f7fb8d954446974881.js'></script>
+    <!-- HYDRO -->
+    <script id="hydro_config" type="text/javascript">
+        window.Hydro_tagId = "53edc452-f898-48fd-95f2-75141a991de6";
+    </script>
+    <script id="hydro_script" src="https://track.hydro.online/" async></script>
+	
 </body>
 </html>
