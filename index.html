@@ -148,19 +148,20 @@
         (function() {
             // Cria um elemento de teste para detecção de adblocker
             var adBlockTest = document.createElement('div');
-            adBlockTest.className = 'adsbox';
+            adBlockTest.className = 'adblock-test';
             adBlockTest.style.height = '1px';
             adBlockTest.style.width = '1px';
+            adBlockTest.style.position = 'absolute';
+            adBlockTest.style.top = '0';
+            adBlockTest.style.left = '0';
+            adBlockTest.style.visibility = 'hidden';
+            adBlockTest.style.overflow = 'hidden';
             document.body.appendChild(adBlockTest);
-
-            // Adiciona um estilo específico para a detecção
-            var style = document.createElement('style');
-            style.innerHTML = '.adsbox { display: block; }';
-            document.head.appendChild(style);
 
             // Função para verificar a presença do elemento de teste
             function checkAdBlock() {
-                if (adBlockTest.offsetHeight === 0 || adBlockTest.offsetWidth === 0) {
+                // Verifica se o elemento de teste foi ocultado
+                if (adBlockTest.offsetHeight === 0) {
                     // Adblock detectado
                     document.getElementById('adblock-message').style.display = 'block';
                     document.querySelector('.content').style.display = 'none';
@@ -171,13 +172,11 @@
                 }
                 // Remove o elemento de teste
                 document.body.removeChild(adBlockTest);
-                document.head.removeChild(style);
             }
 
-            // Verifica a presença do elemento de teste
+            // Verifica a presença do elemento de teste após um pequeno atraso
             setTimeout(checkAdBlock, 100);
         })();
     </script>
-    <script type='text/javascript' src='//spiceoptimistic.com/6a/26/58/6a2658df77ae325b7cd45e502e22f9e6.js'></script>
 </body>
 </html>
