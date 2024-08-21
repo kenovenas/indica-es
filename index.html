@@ -3,20 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Vendas</title>
+    <title>Crypto Faucets</title>
     <style>
-        /* Adicione o CSS aqui para estilo básico */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #FFFFFF;
+            color: #000000;
         }
         header {
             background-color: #4CAF50;
-            color: white;
+            color: #FFFFFF;
             padding: 1em;
             text-align: center;
+            position: relative;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .header-box {
+            background-color: #007BFF;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 1em;
+        }
+        .welcome-message {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #FFFFFF;
+        }
+        .tabs {
+            display: flex;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .tab-button {
+            background-color: #007BFF;
+            border: 1px solid #0056b3;
+            border-bottom: none;
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            width: 25%;
+            box-sizing: border-box;
+        }
+        .tab-button:hover {
+            background-color: #0056b3;
+        }
+        .tab-button.active {
+            background-color: #0056b3;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #FFFFFF;
+        }
+        .active-tab {
+            display: block;
         }
         #banner-container {
             display: flex;
@@ -25,187 +79,116 @@
             padding: 10px;
         }
         .banner {
-            flex: 1 1 calc(20% - 10px); /* Ajuste para 5 banners por linha */
-            min-width: 150px;
+            flex: 1 1 calc(25% - 10px);
+            min-width: 200px;
             max-width: 300px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+            background-color: #FFFFFF;
+            color: black;
+            border: 1px solid #0056b3;
             box-sizing: border-box;
             padding: 10px;
             text-align: center;
+            margin-bottom: 10px;
         }
-        .banner img {
-            width: 100%;
-            height: auto;
-        }
-        .banner-name {
-            margin-top: 5px;
-        }
-        .banner-name a {
-            text-decoration: none;
-            color: #4CAF50;
+        .banner-title {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            padding: 5px;
+            margin: -10px -10px 10px;
+            font-size: 1.2em;
             font-weight: bold;
+        }
+        .banner-message {
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
         footer {
             background-color: #f1f1f1;
-            padding: 1em;
-            text-align: center;
+            padding: 0.3em;
+            text-align: left;
             position: fixed;
-            width: 100%;
+            width: auto;
             bottom: 0;
         }
-        #adblock-message {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
+        .video-container iframe {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            text-align: center;
-            padding-top: 20%;
-            font-size: 1.5em;
-            z-index: 9999;
-        }
-        #adblock-message button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        .content {
-            display: none;
+            max-width: 300px;
+            height: 200px;
         }
     </style>
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
 </head>
 <body>
-    <div id="adblock-message">
-        <p>Por favor, desative seu Adblock para acessar o conteúdo.</p>
-        <button onclick="location.reload()">Atualizar</button>
+    <header>
+        <div class="header-content">
+            <div class="header-box">Keno Venas</div>
+            <div class="header-box">
+                <a href="https://t.me/+Mns6IsONSxliZDkx" target="_blank" style="color: #FFFFFF;">Grupo do Telegram</a>
+            </div>
+        </div>
+        <h1>"Crypto Faucets"</h1>
+        <p class="welcome-message">
+            Olá seja bem vindo ao nosso site de ferramentas para automação!<br>
+            Aqui você encontrará soluções incríveis para maximizar seus ganhos<br>
+            e automatizar suas faucets aumentando sua renda extra.<br>
+            Estamos aqui para tornar sua jornada mais eficiente e lucrativa.<br>
+            Aproveite!!!!
+        </p>
+    </header>
+
+    <div class="tabs">
+        <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
+        <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
+        <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
+        <div class="tab-button" onclick="openTab('outros')">Outros</div>
     </div>
-    <div class="content">
-        <header>
-            <h1>Tem de Tudo</h1>
-        </header>
+
+    <div id="scripts" class="tab-content active-tab">
+        <h2>Scripts</h2>
         <section id="banner-container">
-            <!-- Banner 1 -->
-           <div class="banner">
-    <div class="banner-title">fire faucet (Adicionado em 20/08)</div>
-    <p>Obs:</p>
-    <ol>
-        <li>Login manual</li>
-        <li>Removendo ou incluindo shorts a partir da linha 22 remove ou inclui shorts indesejados no site</li>
-        <li>Tipo de captcha: Cpacha premium na seção ferramentas.</li>
-        <li>Executar usando o Violentmonkey</li>
-        <li>Usar extensão Cors</li>
-        <li>Verificar seção ferramentas</li>
-        <li>Não criei apenas repassando.</li>
-        <li>Caso precise de vídeo explicativo sobre o script, basta pedir no grupo do telegram.</li>
-    </ol>
-    <p>Funções do script: Daily Bonus, Faucet, Level Reward, PTC e ShortLinks</p>
-    <div class="links">
-        <button onclick="window.open('https://firefaucet.win/ref/1122368', '_blank')" class="btn-site">Site</button>
-        <button onclick="window.open('https://cloaking.link/EKisDFAI', '_blank')" class="btn-script">Script</button>
-    </div>
-</div>
-
-<style>
-    .btn-site, .btn-script {
-        padding: 10px 20px;
-        margin: 5px;
-        background-color: green; /* Cor verde para os botões */
-        color: white; /* Cor do texto do botão */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .btn-site:hover, .btn-script:hover {
-        background-color: #45a049; /* Cor do botão ao passar o mouse */
-    }
-</style>
-
-
-            <!-- Banner 2 -->
             <div class="banner">
-                <div class="banner-content">
-                    <img src="https://example.com/banner2.jpg" alt="Produto 2">
-                </div>
-                <div class="banner-name">
-                    <a href="https://example.com/produto2" target="_blank">Nome do Produto 2</a>
+                <div class="banner-title">fire faucet (Adicionado em 20/08)</div>
+                <p>Obs:</p>
+                <ol>
+                    <li>Login manual</li>
+                    <li>Removendo ou incluindo shorts a partir da linha 22 remove ou inclui shorts indesejados no site</li>
+                    <li>Tipo de captcha: Cpacha premium na seção ferramentas.</li>
+                    <li>Executar usando o Violentmonkey</li>
+                    <li>Usar extensão Cors</li>
+                    <li>Verificar seção ferramentas</li>
+                    <li>Não criei, apenas repassando.</li>
+                    <li>Caso precise de vídeo explicativo sobre o script, basta pedir no grupo do Telegram.</li>
+                </ol>
+                <p>Funções do script: Daily Bonus, Faucet, Level Reward, PTC e ShortLinks</p>
+                <div class="links">
+                    <span class="highlighted">Site:</span><a href="https://firefaucet.win/ref/1122368" target="_blank">https://firefaucet.win/ref/1122368</a><br>
+                    <span class="highlighted">Script:</span><a href="https://cloaking.link/EKisDFAI" target="_blank">https://cloaking.link/EKisDFAI</a>
                 </div>
             </div>
 
-            <!-- Banner 3 -->
-            <div class="banner">
-                <div class="banner-content">
-                    <img src="https://example.com/banner3.jpg" alt="Produto 3">
-                </div>
-                <div class="banner-name">
-                    <a href="https://example.com/produto3" target="_blank">Nome do Produto 3</a>
-                </div>
-            </div>
+            <!-- Repeat the above banner structure for other scripts -->
 
-            <!-- Banner 4 -->
-            <div class="banner">
-                <div class="banner-content">
-                    <img src="https://example.com/banner4.jpg" alt="Produto 4">
-                </div>
-                <div class="banner-name">
-                    <a href="https://example.com/produto4" target="_blank">Nome do Produto 4</a>
-                </div>
-            </div>
-
-            <!-- Banner 5 -->
-            <div class="banner">
-                <div class="banner-content">
-                    <img src="https://example.com/banner5.jpg" alt="Produto 5">
-                </div>
-                <div class="banner-name">
-                    <a href="https://example.com/produto5" target="_blank">Nome do Produto 5</a>
-                </div>
-            </div>
         </section>
-        <footer>
-            <p>Para adicionar novos banners, edite o código HTML diretamente.</p>
-        </footer>
     </div>
 
-    <script>
-        (function() {
-            // Cria um elemento de teste para detecção de adblocker
-            var adBlockTest = document.createElement('div');
-            adBlockTest.className = 'adblock-test';
-            adBlockTest.style.height = '1px';
-            adBlockTest.style.width = '1px';
-            adBlockTest.style.position = 'absolute';
-            adBlockTest.style.top = '0';
-            adBlockTest.style.left = '0';
-            adBlockTest.style.visibility = 'hidden';
-            adBlockTest.style.overflow = 'hidden';
-            document.body.appendChild(adBlockTest);
-
-            // Função para verificar a presença do elemento de teste
-            function checkAdBlock() {
-                // Verifica se o elemento de teste foi ocultado
-                if (adBlockTest.offsetHeight === 0) {
-                    // Adblock detectado
-                    document.getElementById('adblock-message').style.display = 'block';
-                    document.querySelector('.content').style.display = 'none';
-                } else {
-                    // Adblock não detectado
-                    document.querySelector('.content').style.display = 'block';
-                    document.getElementById('adblock-message').style.display = 'none';
-                }
-                // Remove o elemento de teste
-                document.body.removeChild(adBlockTest);
-            }
-
-            // Verifica a presença do elemento de teste após um pequeno atraso
-            setTimeout(checkAdBlock, 100);
-        })();
-    </script>
+    <!-- Add content for other tabs here -->
+    
+    <footer>
+        <p>© 2024 Crypto Faucets. All rights reserved.</p>
+    </footer>
 </body>
 </html>
