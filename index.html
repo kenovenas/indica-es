@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Vendas</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Adicione o CSS aqui para estilo básico */
         body {
@@ -147,28 +146,34 @@
 
     <script>
         (function() {
-            var testAdBlock = document.createElement('div');
-            testAdBlock.innerHTML = '&nbsp;';
-            testAdBlock.className = 'adsbox';
-            testAdBlock.style.position = 'absolute';
-            testAdBlock.style.top = '-9999px';
-            testAdBlock.style.width = '1px';
-            testAdBlock.style.height = '1px';
-            testAdBlock.style.overflow = 'hidden';
-            document.body.appendChild(testAdBlock);
+            // Cria um elemento de teste para detecção de adblocker
+            var adBlockTest = document.createElement('div');
+            adBlockTest.className = 'adsbox';
+            document.body.appendChild(adBlockTest);
 
-            window.onload = function() {
-                setTimeout(function() {
-                    if (testAdBlock.offsetHeight === 0) {
-                        document.getElementById('adblock-message').style.display = 'block';
-                        document.querySelector('.content').style.display = 'none';
-                    } else {
-                        document.querySelector('.content').style.display = 'block';
-                        document.getElementById('adblock-message').style.display = 'none';
-                    }
-                    document.body.removeChild(testAdBlock);
-                }, 100);
-            };
+            // Adiciona um estilo específico para a detecção
+            var style = document.createElement('style');
+            style.innerHTML = '.adsbox { display: none; }';
+            document.head.appendChild(style);
+
+            // Função para verificar a presença do elemento de teste
+            function checkAdBlock() {
+                if (adBlockTest.offsetHeight === 0) {
+                    // Adblock detectado
+                    document.getElementById('adblock-message').style.display = 'block';
+                    document.querySelector('.content').style.display = 'none';
+                } else {
+                    // Adblock não detectado
+                    document.querySelector('.content').style.display = 'block';
+                    document.getElementById('adblock-message').style.display = 'none';
+                }
+                // Remove o elemento de teste
+                document.body.removeChild(adBlockTest);
+                document.head.removeChild(style);
+            }
+
+            // Verifica a presença do elemento de teste
+            setTimeout(checkAdBlock, 100);
         })();
     </script>
 </body>
