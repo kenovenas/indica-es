@@ -149,16 +149,18 @@
             // Cria um elemento de teste para detecção de adblocker
             var adBlockTest = document.createElement('div');
             adBlockTest.className = 'adsbox';
+            adBlockTest.style.height = '1px';
+            adBlockTest.style.width = '1px';
             document.body.appendChild(adBlockTest);
 
             // Adiciona um estilo específico para a detecção
             var style = document.createElement('style');
-            style.innerHTML = '.adsbox { display: none; }';
+            style.innerHTML = '.adsbox { display: block; }';
             document.head.appendChild(style);
 
             // Função para verificar a presença do elemento de teste
             function checkAdBlock() {
-                if (adBlockTest.offsetHeight === 0) {
+                if (adBlockTest.offsetHeight === 0 || adBlockTest.offsetWidth === 0) {
                     // Adblock detectado
                     document.getElementById('adblock-message').style.display = 'block';
                     document.querySelector('.content').style.display = 'none';
