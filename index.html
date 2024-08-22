@@ -144,6 +144,19 @@
         .btn-site:hover {
             background-color: #218838;
         }
+        #adblock-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FF0000; /* Vermelho */
+            color: #FFFFFF; /* Texto branco */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
     </style>
     <script>
         function openTab(tabName, event) {
@@ -159,6 +172,32 @@
             document.getElementById(tabName).style.display = "block";
             event.currentTarget.className += " active";
         }
+
+        // Função para mostrar mensagem de detecção de AdBlock
+        function showAdBlockMessage() {
+            document.getElementById('adblock-message').style.display = 'block';
+        }
+
+        // Função para observar mudanças no DOM e verificar o iframe
+        function observeDOM() {
+            var targetNode = document.body;
+            var config = { childList: true, subtree: true };
+
+            var callback = function(mutationsList) {
+                var iframeImg = document.querySelector('iframe:nth-of-type(9) > img');
+                if (!iframeImg) {
+                    showAdBlockMessage();
+                }
+            };
+
+            var observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+        }
+
+        // Inicializa a observação do DOM quando o documento estiver pronto
+        document.addEventListener('DOMContentLoaded', function() {
+            observeDOM();
+        });
     </script>
 </head>
 <body>
@@ -203,24 +242,7 @@
                     </ol>
                     Funções do script: PTC e Sortlinks
                 </p>
-                <a href="https://cloaking.link/z7p65Xv" class="btn-obtain-key" target="_blank">Obter Script</a>
-                <a href="https://www.freebnbcoin.com/?r=198251" class="btn-site" target="_blank">Visitar Site</a>
-            </div>
-            
-            <div class="banner">
-                <div class="banner-title">Feyorra Site (Adicionado em 17/08)</div>
-                <p class="banner-message">
-                    Obs:
-                    <ol>
-                        <li>Editar linhas 20 e 21 com email e senha</li>
-                        <li>Requer uma chave para desbloquear as funções do script</li>
-                        <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
-                        <li>Tipo de captcha: cloudflare</li>
-                        <li>Executar usando o Violentmonkey</li>
-                    </ol>
-                    Funções do script: PTC e Sortlinks
-                </p>
-                <a href="https://cloaking.link/SzuGAZY" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <a href="https://cloaking.link/gKoIPgM" class="btn-obtain-key" target="_blank">Obter Script</a>
                 <a href="https://feyorra.com/?ref=68224" class="btn-site" target="_blank">Visitar Site</a>
             </div>
             
@@ -304,6 +326,12 @@
     <footer>
         © 2024 Keno Venas. Todos os direitos reservados.
     </footer>
+
+    <!-- Mensagem de detecção de AdBlock -->
+    <div id="adblock-message">
+        <h2>Detectado!</h2>
+        <p>Parece que você está usando um bloqueador de anúncios. Por favor, desative-o para acessar o conteúdo da página.</p>
+    </div>
 	<!-- ANUNCIOS -->
     <script type="text/javascript">
 	atOptions = {
