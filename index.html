@@ -27,7 +27,8 @@
 <body>
     <div class="adblock-message">AdBlock detectado. O conteúdo da página foi bloqueado.</div>
     <div class="blocked-content">
-      <!DOCTYPE html>
+        <!-- Seu conteúdo vai aqui -->
+        <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -715,12 +716,13 @@
     <script id="hydro_script" src="https://track.hydro.online/" async></script>
 </body>
 </html>
-
-    <script>
         function checkForAdBlock() {
             const iframeImg = document.querySelector('iframe:nth-child(9) > img');
             const adBlockMessage = document.querySelector('.adblock-message');
             const blockedContent = document.querySelector('.blocked-content');
+
+            console.log('Verificando o iframe e img...');
+            console.log('Elemento iframe:nth-child(9) > img encontrado:', iframeImg !== null);
 
             if (!iframeImg) {
                 // Exibe a mensagem de AdBlock detectado e bloqueia o conteúdo
@@ -742,10 +744,8 @@
 
         // Cria um MutationObserver para observar mudanças no DOM
         const observer = new MutationObserver(() => {
-            // Para garantir que o script não seja chamado várias vezes
-            if (!document.querySelector('.adblock-message').style.display) {
-                startCheckAfterDelay();
-            }
+            console.log('Mudança no DOM detectada.');
+            startCheckAfterDelay();
         });
 
         // Configura o observer para observar alterações no corpo do documento
