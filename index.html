@@ -146,7 +146,35 @@
         }
     </style>
     <script>
-       
+        function openTab(tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+	    <script> 
+   window.onload=function(){ 
+  var adElement = document.createElement('div'); 
+  adElement.className = 'adsbox'; 
+  adElement.style.display = 'none'; 
+  document.body.appendChild(adElement); 
+  setTimeout(function(){ 
+  if (adElement.offsetHeight === 0){ 
+   alert('Adblocker Detected!'); 
+  } 
+        else{alert('disable');} 
+  adElement.remove(); 
+  },1); 
+   
+  }
+    </script>
 </head>
 <body>
     <header>
@@ -178,6 +206,7 @@
         <h2>Scripts</h2>
         <section id="banner-container">
             <!-- Exemplo de banner para Scripts -->
+            <div class="banner">
 
                 <div class="banner">
                 <div class="banner-title">Tronpayz (Adicionado em 21/08)</div>
