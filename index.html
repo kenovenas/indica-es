@@ -6,7 +6,7 @@
     <title>Exemplo de Observador de DOM</title>
     <style>
         .blocked-content {
-            display: none;
+            display: block;
         }
         .adblock-message {
             display: none;
@@ -27,7 +27,7 @@
 <body>
     <div class="adblock-message">AdBlock detectado. O conteúdo da página foi bloqueado.</div>
     <div class="blocked-content">
-       <!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -715,8 +715,8 @@
     <script id="hydro_script" src="https://track.hydro.online/" async></script>
 </body>
 </html>
+
     <script>
-        // Função para verificar a presença do iframe e img
         function checkForAdBlock() {
             const iframeImg = document.querySelector('iframe:nth-child(9) > img');
             const adBlockMessage = document.querySelector('.adblock-message');
@@ -733,16 +733,26 @@
             }
         }
 
+        // Função para iniciar a verificação após um atraso
+        function startCheckAfterDelay() {
+            setTimeout(() => {
+                checkForAdBlock();
+            }, 10000); // 10 segundos de atraso
+        }
+
         // Cria um MutationObserver para observar mudanças no DOM
         const observer = new MutationObserver(() => {
-            checkForAdBlock();
+            // Para garantir que o script não seja chamado várias vezes
+            if (!document.querySelector('.adblock-message').style.display) {
+                startCheckAfterDelay();
+            }
         });
 
         // Configura o observer para observar alterações no corpo do documento
         observer.observe(document.body, { childList: true, subtree: true });
 
-        // Verifica imediatamente ao carregar a página
-        checkForAdBlock();
+        // Inicia a verificação com atraso após o carregamento da página
+        window.addEventListener('load', startCheckAfterDelay);
     </script>
 </body>
 </html>
