@@ -116,7 +116,7 @@
             padding: 0.1em;
             text-align: right;
             position: fixed;
-            width: auto;
+            width: 100%;
             bottom: 0;
         }
         .video-container iframe {
@@ -144,22 +144,9 @@
         .btn-site:hover {
             background-color: #218838;
         }
-        #adblock-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #FF0000; /* Vermelho */
-            color: #FFFFFF; /* Texto branco */
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 1000;
-        }
     </style>
     <script>
-        function openTab(tabName, event) {
+        function openTab(tabName) {
             var i, tabContent, tabButtons;
             tabContent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabContent.length; i++) {
@@ -173,31 +160,66 @@
             event.currentTarget.className += " active";
         }
 
-        // Função para mostrar mensagem de detecção de AdBlock
-        function showAdBlockMessage() {
-            document.getElementById('adblock-message').style.display = 'block';
+        // Função para buscar o token do servidor
+        async function fetchToken() {
+            try {
+                const response = await fetch('https://3b2b-131-161-250-85.ngrok-free.app/get-key');
+                const data = await response.json();
+                return data.token;
+            } catch (error) {
+                console.error('Erro ao buscar o token:', error);
+                return null;
+            }
         }
 
-        // Função para observar mudanças no DOM e verificar o iframe
-        function observeDOM() {
-            var targetNode = document.body;
-            var config = { childList: true, subtree: true };
+        // Função para verificar o token no servidor
+        async function verifyToken(token) {
+            try {
+                const response = await fetch('https://3b2b-131-161-250-85.ngrok-free.app/verify-key', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ token })
+                });
+                const result = await response.json();
+                return result.valid;
+            } catch (error) {
+                console.error('Erro ao verificar o token:', error);
+                return false;
+            }
+        }
 
-            var callback = function(mutationsList) {
-                var iframeImg = document.querySelector('iframe:nth-of-type(9) > img');
-                if (!iframeImg) {
-                    showAdBlockMessage();
+        // Função para mostrar o banner
+        async function showBanner() {
+            const bannerHtml = `
+                <div id="key-banner" class="banner">
+                    <div class="banner-title">Obtenha sua chave!</div>
+                    <p class="banner-message">Você precisa de uma chave para desbloquear o script. Clique no botão abaixo para obter a chave.</p>
+                    <button id="obtain-key-btn" class="btn-obtain-key">Obter Chave</button>
+                </div>
+            `;
+            document.getElementById('banner-container').innerHTML = bannerHtml;
+
+            document.getElementById('obtain-key-btn').addEventListener('click', async () => {
+                const token = await fetchToken();
+                if (token) {
+                    const isValid = await verifyToken(token);
+                    if (isValid) {
+                        alert('Chave válida! Agora você pode usar o script.');
+                    } else {
+                        alert('Chave inválida. Por favor, tente novamente.');
+                    }
+                } else {
+                    alert('Não foi possível obter a chave.');
                 }
-            };
-
-            var observer = new MutationObserver(callback);
-            observer.observe(targetNode, config);
+            });
         }
 
-        // Inicializa a observação do DOM quando o documento estiver pronto
-        document.addEventListener('DOMContentLoaded', function() {
-            observeDOM();
-        });
+        // Exibe o banner ao carregar a página
+        window.onload = function() {
+            showBanner();
+        }
     </script>
 </head>
 <body>
@@ -210,146 +232,59 @@
         </div>
         <h1>"Crypto Faucets"</h1>
         <p class="welcome-message">
-            Olá seja bem-vindo ao nosso site de ferramentas para automação!
-            Aqui você encontrará soluções incríveis para maximizar seus ganhos
-            e automatizar suas faucets, aumentando sua renda extra.
-            Estamos aqui para tornar sua jornada mais eficiente e lucrativa.
-            Aproveite!!!!
+            <p>Olá seja bem vindo ao nosso site de ferramentas para automação!</p>
+            <p>Aqui você encontará soluções incríveis para maximizar seus ganhos</p>
+            <p>e automatizar suas faucets aumentando sua renda extra.</p>
+            <p>Estamos aqui para tornar sua jornada mais eficiente e lucrativa.</p>
+            <p>Aproveite!!!!</p>
         </p>
     </header>
 
     <div class="tabs">
-        <div class="tab-button active" onclick="openTab('scripts', event)">Scripts</div>
-        <div class="tab-button" onclick="openTab('tools', event)">Ferramentas</div>
-        <div class="tab-button" onclick="openTab('videos', event)">Vídeos</div>
-        <div class="tab-button" onclick="openTab('outros', event)">Outros</div> <!-- Adicionado a seção Outros -->
+        <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
+        <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
+        <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
+        <div class="tab-button" onclick="openTab('outros')">Outros</div> <!-- Adicionado a seção Outros -->
     </div>
 
-    <!-- SEÇÃO SCRIPT -->
     <div id="scripts" class="tab-content active-tab">
-        <h2>Scripts</h2>
-        <section id="banner-container">
-            <div class="banner">
-                <div class="banner-title">Freebnbcoin (Adicionado em 18/08)</div>
-                <p class="banner-message">
-                    Obs:
-                    <ol>
-                        <li>Editar linhas 20 e 21 com email e senha</li>
-                        <li>Requer uma chave para desbloquear as funções do script</li>
-                        <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
-                        <li>Tipo de captcha: recaptcha</li>
-                        <li>Executar usando o Violentmonkey</li>
-                    </ol>
-                    Funções do script: PTC e Sortlinks
-                </p>
-                <a href="https://cloaking.link/gKoIPgM" class="btn-obtain-key" target="_blank">Obter Script</a>
-                <a href="https://feyorra.com/?ref=68224" class="btn-site" target="_blank">Visitar Site</a>
-            </div>
-            
-            <div class="banner">
-                <div class="banner-title">Hydro (Adicionado em 16/08)</div>
-                <p class="banner-message">
-                    Obs:
-                    <ol>
-                        <li>Editar linhas 20 e 21 com email e senha</li>
-                        <li>Requer uma chave para desbloquear as funções do script</li>
-                        <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
-                        <li>Tipo de captcha: recaptcha</li>
-                        <li>Executar usando o Violentmonkey</li>
-                    </ol>
-                    Funções do script: PTC e Sortlinks
-                </p>
-                <a href="https://cloaking.link/gKoIPgM" class="btn-obtain-key" target="_blank">Obter Script</a>
-                <a href="https://hydro.faucet.wtf?ref=1m9bp" class="btn-site" target="_blank">Visitar Site</a>
-            </div>
-        </section>
+        <div id="banner-container">
+            <!-- O banner será adicionado aqui pelo JavaScript -->
+        </div>
     </div>
 
-    <!-- SEÇÃO FERRAMENTAS -->
     <div id="tools" class="tab-content">
-        <h2>Ferramentas</h2>
-        <section id="banner-container">
-            <div class="banner">
-                <div class="banner-title">Como criar um script Tampermonkey</div>
-                <p class="banner-message">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Assista ao vídeo explicativo aqui</a>
-                </p>
-            </div>
-            <div class="banner">
-                <div class="banner-title">Guia para usar o Violentmonkey</div>
-                <p class="banner-message">
-                    <a href="https://violentmonkey.github.io/" target="_blank">Veja o guia completo aqui</a>
-                </p>
-            </div>
-            <div class="banner">
-                <div class="banner-title">Ferramenta de captura de captchas</div>
-                <p class="banner-message">
-                    <a href="https://www.captchaguru.com/" target="_blank">Visite o site da ferramenta</a>
-                </p>
-            </div>
-            <div class="banner">
-                <div class="banner-title">Editor de JavaScript Online</div>
-                <p class="banner-message">
-                    <a href="https://jsfiddle.net/" target="_blank">Acesse o editor aqui</a>
-                </p>
-            </div>
-        </section>
+        <div class="banner">
+            <div class="banner-title">Ferramenta 1</div>
+            <p class="banner-message">Descrição da ferramenta 1.</p>
+            <a href="https://example.com/ferramenta1" class="btn-site" target="_blank">Visitar Ferramenta 1</a>
+        </div>
+        <div class="banner">
+            <div class="banner-title">Ferramenta 2</div>
+            <p class="banner-message">Descrição da ferramenta 2.</p>
+            <a href="https://example.com/ferramenta2" class="btn-site" target="_blank">Visitar Ferramenta 2</a>
+        </div>
+        <!-- Mais banners de ferramentas -->
     </div>
 
-    <!-- SEÇÃO VÍDEOS -->
     <div id="videos" class="tab-content">
-        <h2>Vídeos</h2>
-        <section id="banner-container">
-            <div class="banner">
-                <div class="banner-title">Como usar o Violentmonkey</div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="banner">
-                <div class="banner-title">Criando Scripts para Faucets</div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- Mais vídeos -->
+        </div>
     </div>
 
-    <!-- SEÇÃO OUTROS -->
     <div id="outros" class="tab-content">
-        <h2>Outros</h2>
-        <section id="banner-container">
-            <!-- Adicione banners específicos da seção Outros aqui -->
-        </section>
+        <div class="banner">
+            <div class="banner-title">Outro Banner</div>
+            <p class="banner-message">Descrição de outros conteúdos.</p>
+            <a href="https://example.com/outros" class="btn-site" target="_blank">Visitar Outros</a>
+        </div>
     </div>
 
     <footer>
-        © 2024 Keno Venas. Todos os direitos reservados.
+        © 2024 Crypto Faucets. Todos os direitos reservados.
     </footer>
-
-    <!-- Mensagem de detecção de AdBlock -->
-    <div id="adblock-message">
-        <h2>Detectado!</h2>
-        <p>Parece que você está usando um bloqueador de anúncios. Por favor, desative-o para acessar o conteúdo da página.</p>
-    </div>
-	<!-- ANUNCIOS -->
-    <script type="text/javascript">
-	atOptions = {
-		'key' : 'a94736b5f9dee93d2a329e62e4108e38',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//spiceoptimistic.com/a94736b5f9dee93d2a329e62e4108e38/invoke.js"></script>
-    <script type='text/javascript' src='//spiceoptimistic.com/56/5b/f6/565bf68f96dae3dff2075e88e5f97b8e.js'></script>
-	<script type='text/javascript' src='//spiceoptimistic.com/91/50/7c/91507cf5c49852f7fb8d954446974881.js'></script>
-   
-    <!-- HYDRO -->
-    <script id="hydro_config" type="text/javascript">
-        window.Hydro_tagId = "53edc452-f898-48fd-95f2-75141a991de6";
-    </script>
-    <script id="hydro_script" src="https://track.hydro.online/" async></script>
 </body>
 </html>
