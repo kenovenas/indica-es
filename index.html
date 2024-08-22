@@ -39,22 +39,20 @@
 
     <!-- Script para detecção do bloqueador de anúncios -->
     <script>
-        // Função para verificar se o bloqueador de anúncios está ativo
         function checkAdBlock() {
+            var adElement = document.querySelector('iframe:nth-child(9) > img');
             var adBlockEnabled = false;
 
-            // Criar um script bloqueado comumente por adblockers
-            var testScript = document.createElement('script');
-            testScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-            testScript.onerror = function() {
+            // Verificar se o elemento existe e está visível
+            if (!adElement || adElement.offsetHeight === 0 || adElement.offsetParent === null) {
                 adBlockEnabled = true;
-                if (adBlockEnabled) {
-                    document.getElementById('ad-block-detected').style.display = 'block';
-                    document.getElementById('main-content').style.display = 'none';
-                }
-            };
-            
-            document.head.appendChild(testScript);
+            }
+
+            // Se o bloqueador de anúncios foi detectado, exibe a mensagem de bloqueio
+            if (adBlockEnabled) {
+                document.getElementById('ad-block-detected').style.display = 'block';
+                document.getElementById('main-content').style.display = 'none';
+            }
         }
 
         // Executar a verificação quando a página for carregada
@@ -62,6 +60,19 @@
             checkAdBlock();
         };
     </script>
+
+     <!-- ANUNCIOS -->
+    <script type="text/javascript">
+	atOptions = {
+		'key' : 'a94736b5f9dee93d2a329e62e4108e38',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//spiceoptimistic.com/a94736b5f9dee93d2a329e62e4108e38/invoke.js"></script>
+    <script type='text/javascript' src='//spiceoptimistic.com/56/5b/f6/565bf68f96dae3dff2075e88e5f97b8e.js'></script>
 
 </body>
 </html>
