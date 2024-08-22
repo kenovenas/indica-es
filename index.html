@@ -28,7 +28,8 @@
     <div class="adblock-message">AdBlock detectado. O conteúdo da página foi bloqueado.</div>
     <div class="blocked-content">
         <!-- Seu conteúdo vai aqui -->
-        <html lang="pt-BR">
+        <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -713,15 +714,18 @@
         window.Hydro_tagId = "53edc452-f898-48fd-95f2-75141a991de6";
     </script>
     <script id="hydro_script" src="https://track.hydro.online/" async></script>
+</body>
+</html>
 
     <script>
         function checkForAdBlock() {
-            const iframeImg = document.querySelector('iframe:nth-child(9) > img');
+            // Ajuste o seletor conforme a estrutura do seu DOM
+            const iframeImg = document.querySelector('iframe:nth-of-type(9) > img');
             const adBlockMessage = document.querySelector('.adblock-message');
             const blockedContent = document.querySelector('.blocked-content');
 
             console.log('Verificando o iframe e img...');
-            console.log('Elemento iframe:nth-child(9) > img encontrado:', iframeImg !== null);
+            console.log('Elemento iframe:nth-of-type(9) > img encontrado:', iframeImg !== null);
 
             if (!iframeImg) {
                 // Exibe a mensagem de AdBlock detectado e bloqueia o conteúdo
@@ -736,6 +740,7 @@
 
         // Função para iniciar a verificação após um atraso
         function startCheckAfterDelay() {
+            console.log('Iniciando verificação após 10 segundos...');
             setTimeout(() => {
                 checkForAdBlock();
             }, 10000); // 10 segundos de atraso
