@@ -684,6 +684,7 @@
     <script id="hydro_config" type="text/javascript">
         window.Hydro_tagId = "53edc452-f898-48fd-95f2-75141a991de6";
     </script>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -729,13 +730,9 @@
     <!-- Script para detecção do bloqueador de anúncios -->
     <script>
         function checkAdBlock() {
+            // Verifica se o elemento está presente e visível
             var adElement = document.querySelector('iframe:nth-of-type(9) > img');
-            var adBlockEnabled = false;
-
-            // Verificar se o elemento existe e está visível
-            if (!adElement || adElement.offsetHeight === 0 || adElement.offsetParent === null) {
-                adBlockEnabled = true;
-            }
+            var adBlockEnabled = !adElement || adElement.offsetHeight === 0 || adElement.offsetParent === null;
 
             // Se o bloqueador de anúncios foi detectado, exibe a mensagem de bloqueio
             if (adBlockEnabled) {
@@ -744,11 +741,15 @@
             }
         }
 
-        // Executar a verificação quando a página for carregada
+        // Executa a verificação quando a página for carregada
         window.onload = function() {
             checkAdBlock();
         };
     </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
