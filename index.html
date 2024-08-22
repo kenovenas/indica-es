@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+ <script> 
+   window.onload=function(){ 
+  var adElement = document.createElement('div'); 
+  adElement.className = 'adsbox'; 
+  adElement.style.display = 'none'; 
+  document.body.appendChild(adElement); 
+  setTimeout(function(){ 
+  if (adElement.offsetHeight === 0){ 
+   alert('Adblocker Detected!'); 
+  } 
+        else{alert('disable');} 
+  adElement.remove(); 
+  },1); 
+   
+  }
+    </script>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -159,22 +175,7 @@
             document.getElementById(tabName).style.display = "block";
             event.currentTarget.className += " active";
         }
-	    <script> 
-   window.onload=function(){ 
-  var adElement = document.createElement('div'); 
-  adElement.className = 'adsbox'; 
-  adElement.style.display = 'none'; 
-  document.body.appendChild(adElement); 
-  setTimeout(function(){ 
-  if (adElement.offsetHeight === 0){ 
-   alert('Adblocker Detected!'); 
-  } 
-        else{alert('disable');} 
-  adElement.remove(); 
-  },1); 
-   
-  }
-    </script>
+	
 </head>
 <body>
     <header>
