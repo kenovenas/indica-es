@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Detecção de Bloqueador de Anúncios</title>
-    
+    <title>Detecção de Bloqueador de Anúncios</title>
+
     <!-- Estilos para a mensagem de bloqueio -->
     <style>
         #ad-block-detected {
@@ -14,7 +14,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
             color: white;
             text-align: center;
             padding-top: 20%;
@@ -37,63 +37,29 @@
         <p>Por favor, desative o bloqueador de anúncios para acessar o conteúdo desta página.</p>
     </div>
 
-    <!-- Abordagem 1: Detecção com classe comum de anúncios -->
+    <!-- Script para detecção do bloqueador de anúncios -->
     <script>
+        // Função para verificar se o bloqueador de anúncios está ativo
         function checkAdBlock() {
+            // Criar um elemento que geralmente é bloqueado por adblockers
             var adTest = document.createElement('div');
             adTest.className = 'adsbygoogle'; // Classe comum bloqueada por adblockers
-            adTest.style.height = '1px';
+            adTest.style.display = 'none'; // Garantir que o elemento não apareça na tela
             document.body.appendChild(adTest);
 
-            if (adTest.offsetHeight === 0) {
+            // Se o elemento não foi adicionado ao DOM, o adblock está ativo
+            if (!adTest || adTest.offsetParent === null || adTest.clientHeight === 0) {
                 document.getElementById('ad-block-detected').style.display = 'block';
                 document.getElementById('main-content').style.display = 'none';
             }
 
+            // Remover o elemento de teste do DOM
             document.body.removeChild(adTest);
         }
 
+        // Executar a verificação quando a página for carregada
         window.onload = function() {
             checkAdBlock();
-        };
-    </script>
-
-    <!-- Abordagem 2: Detecção tentando carregar um script de anúncio externo -->
-    <script>
-        window.onload = function() {
-            var adBlockDetected = false;
-
-            // Tenta carregar um script de anúncio
-            var script = document.createElement('script');
-            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-            script.onerror = function() {
-                adBlockDetected = true;
-                document.getElementById('ad-block-detected').style.display = 'block';
-                document.getElementById('main-content').style.display = 'none';
-            };
-            document.body.appendChild(script);
-        };
-    </script>
-
-    <!-- Abordagem 3: Teste simplificado de detecção -->
-    <script>
-        function checkAdBlockSimple() {
-            var adTest = document.createElement('div');
-            adTest.innerHTML = '&nbsp;';
-            adTest.className = 'adsbygoogle'; // Usar uma classe comum de anúncios
-            document.body.appendChild(adTest);
-
-            if (adTest.offsetHeight === 0) {
-                alert('AdBlock Detectado!');
-            } else {
-                alert('AdBlock NÃO Detectado!');
-            }
-
-            document.body.removeChild(adTest);
-        }
-
-        window.onload = function() {
-            checkAdBlockSimple();
         };
     </script>
 
