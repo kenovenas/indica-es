@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Detecção de Bloqueador de Anúncios</title>
+    <title>Teste de Detecção de Bloqueador de Anúncios</title>
+    
+    <!-- Estilos para a mensagem de bloqueio -->
     <style>
-        /* Estilos para a mensagem de bloqueio */
         #ad-block-detected {
             display: none;
             position: fixed;
@@ -36,27 +37,63 @@
         <p>Por favor, desative o bloqueador de anúncios para acessar o conteúdo desta página.</p>
     </div>
 
-    <!-- Código JavaScript para detecção de bloqueador de anúncios -->
+    <!-- Abordagem 1: Detecção com classe comum de anúncios -->
     <script>
         function checkAdBlock() {
-            // Cria um elemento para simular um anúncio
             var adTest = document.createElement('div');
-            adTest.className = 'ad-banner'; // Classe comum bloqueada por adblockers
+            adTest.className = 'adsbygoogle'; // Classe comum bloqueada por adblockers
             adTest.style.height = '1px';
             document.body.appendChild(adTest);
 
-            // Verifica se o elemento foi bloqueado
             if (adTest.offsetHeight === 0) {
                 document.getElementById('ad-block-detected').style.display = 'block';
                 document.getElementById('main-content').style.display = 'none';
             }
 
-            // Remove o elemento de teste
             document.body.removeChild(adTest);
         }
 
         window.onload = function() {
             checkAdBlock();
+        };
+    </script>
+
+    <!-- Abordagem 2: Detecção tentando carregar um script de anúncio externo -->
+    <script>
+        window.onload = function() {
+            var adBlockDetected = false;
+
+            // Tenta carregar um script de anúncio
+            var script = document.createElement('script');
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            script.onerror = function() {
+                adBlockDetected = true;
+                document.getElementById('ad-block-detected').style.display = 'block';
+                document.getElementById('main-content').style.display = 'none';
+            };
+            document.body.appendChild(script);
+        };
+    </script>
+
+    <!-- Abordagem 3: Teste simplificado de detecção -->
+    <script>
+        function checkAdBlockSimple() {
+            var adTest = document.createElement('div');
+            adTest.innerHTML = '&nbsp;';
+            adTest.className = 'adsbygoogle'; // Usar uma classe comum de anúncios
+            document.body.appendChild(adTest);
+
+            if (adTest.offsetHeight === 0) {
+                alert('AdBlock Detectado!');
+            } else {
+                alert('AdBlock NÃO Detectado!');
+            }
+
+            document.body.removeChild(adTest);
+        }
+
+        window.onload = function() {
+            checkAdBlockSimple();
         };
     </script>
 
