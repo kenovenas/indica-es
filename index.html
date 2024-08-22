@@ -1,4 +1,33 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Observador de DOM</title>
+    <style>
+        .blocked-content {
+            display: none;
+        }
+        .adblock-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="adblock-message">AdBlock detectado. O conteúdo da página foi bloqueado.</div>
+    <div class="blocked-content">
+       <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -114,9 +143,9 @@
         footer {
             background-color: #f1f1f1;
             padding: 0.1em;
-            text-align: right;
+            text-align: rigt;
             position: fixed;
-            width: 100%;
+            width: auto;
             bottom: 0;
         }
         .video-container iframe {
@@ -159,67 +188,6 @@
             document.getElementById(tabName).style.display = "block";
             event.currentTarget.className += " active";
         }
-
-        // Função para buscar o token do servidor
-        async function fetchToken() {
-            try {
-                const response = await fetch('https://3b2b-131-161-250-85.ngrok-free.app/get-key');
-                const data = await response.json();
-                return data.token;
-            } catch (error) {
-                console.error('Erro ao buscar o token:', error);
-                return null;
-            }
-        }
-
-        // Função para verificar o token no servidor
-        async function verifyToken(token) {
-            try {
-                const response = await fetch('https://3b2b-131-161-250-85.ngrok-free.app/verify-key', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ token })
-                });
-                const result = await response.json();
-                return result.valid;
-            } catch (error) {
-                console.error('Erro ao verificar o token:', error);
-                return false;
-            }
-        }
-
-        // Função para mostrar o banner
-        async function showBanner() {
-            const bannerHtml = `
-                <div id="key-banner" class="banner">
-                    <div class="banner-title">Obtenha sua chave!</div>
-                    <p class="banner-message">Você precisa de uma chave para desbloquear o script. Clique no botão abaixo para obter a chave.</p>
-                    <button id="obtain-key-btn" class="btn-obtain-key">Obter Chave</button>
-                </div>
-            `;
-            document.getElementById('banner-container').innerHTML = bannerHtml;
-
-            document.getElementById('obtain-key-btn').addEventListener('click', async () => {
-                const token = await fetchToken();
-                if (token) {
-                    const isValid = await verifyToken(token);
-                    if (isValid) {
-                        alert('Chave válida! Agora você pode usar o script.');
-                    } else {
-                        alert('Chave inválida. Por favor, tente novamente.');
-                    }
-                } else {
-                    alert('Não foi possível obter a chave.');
-                }
-            });
-        }
-
-        // Exibe o banner ao carregar a página
-        window.onload = function() {
-            showBanner();
-        }
     </script>
 </head>
 <body>
@@ -247,44 +215,484 @@
         <div class="tab-button" onclick="openTab('outros')">Outros</div> <!-- Adicionado a seção Outros -->
     </div>
 
+    <!-- SEÇÃO SCRIPT -->
     <div id="scripts" class="tab-content active-tab">
-        <div id="banner-container">
-            <!-- O banner será adicionado aqui pelo JavaScript -->
-        </div>
+        <h2>Scripts</h2>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Scripts -->
+
+                <div class="banner">
+                <div class="banner-title">Tronpayz (Adicionado em 21/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                        <li>Login manual</li>
+                        <li>Removendo ou incluindo shorts apartir da  linha 19 remove ou inclui shorts idensejados no site</li>
+                        <li>Tipo de captcha: Sem captcha</li>
+                        <li>Executar usando o Violentmonkey</li>
+                        <li>Requer uma chave para desbloquear as funções do script</li>
+                        <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                    </ol>
+                    Funções do script: Dayli Bonus, Faucet, Level Reward, PTC e ShortLinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/6CnftY5" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href=" https://tronpayz.com/?r=1915" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+                 
+                  <div class="banner">
+                <div class="banner-title">fire faucet (Adicionado em 20/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                        <li>Login manual</li>
+                        <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                        <li>Tipo de captcha: Cpacha premium na seção ferramenats.</li>
+                        <li>Executar usando o Violentmonkey</li>
+                        <li>Verificar seção ferramentas</li>
+                        <li>Não criei apenas repassando.</li>
+                        <li>Caso precise de video explicativo sobre o script basta pedir no grupo do telegram.</li>
+                    </ol>
+                    Funções do script: Dayli Bonus, Faucet, Level Reward, PTC e ShortLinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/EKisDFAI" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://firefaucet.win/ref/1122368" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">BitHub (Adicionado em 18/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                         <li>Editar linhas 19 e 20 com email e senha</li>
+                          <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                          <li>Requer uma chave para desbloquear as funções do script</li>
+                          <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                          <li>Tipo de captcha: RScaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                <li>Usar extensao Cors</li>
+                <li>Material necessário na seção ferramentas</li>
+                <li>Verificar seção ferramentas</li>
+                    </ol>
+                    Funções do script: Dayli Bonus, Faucet, Level Reward, PTC e ShortLinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/sm7Vuf" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://bithub.win/?r=373106" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">CoinMaster (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                        <li>Editar linhas 19 e 20 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                <li>Assistir o vídeo para entender como converter saldo e ter lucro</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/dzZ7iF" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://coinmasters.online/?r=7873" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+
+            <div class="banner">
+                <div class="banner-title">Viefaucet (Adicionado em 20/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                        <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: Upside-Down</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/z77T4" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://viefaucet.com?r=639b5541044da56661e2b7b9" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Coinpayz (Adicionado em 18/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                         <li>Editar email e senha linhas 20 e 21</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 22 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: hcptcha Upside-Down</li>
+                <li>Usar MultiBot</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/br7nDrvR" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://coinpayz.xyz/?r=605941" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+
+             <div class="banner">
+                <div class="banner-title">ClaimBits (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                    <li>Editar linhas 19 e 20</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: incocaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/zfgcG" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://claimbits.net/?ref=302900" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+
+		<div class="banner">
+                <div class="banner-title">Coinymate (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                     <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: sem captcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/cwQ7oZcm" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://coinymate.com/?r=4730" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">FreeBonk (Adicionado em 18/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                         <li>Login manual</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha, incocaptcha e antibot</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC, Sortlinks e faucet
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="href="https://cloaking.link/GiIuBgxd" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para obter o script -->
+                <a href="href="https://cloaking.link/LhbfliHt" class="btn-obtain-key" target="_blank">Adicional Bonk</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://free-bonk.com/?r=57612" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Claimcoin (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                        li>Editar linhas 18 e 19</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/w72slsn" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://coinmasters.online/?r=7873" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+
+            <div class="banner">
+                <div class="banner-title">EarnPepe (Adicionado em 20/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                      <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Removendo ou incluindo shorts apartir da  linha 20 remove ou inclui shorts idensejados no site</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: Sortlinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/ttxx4" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://earn-pepe.com/?ref=pf4Em" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Freebnbcoin (Adicionado em 18/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                         <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/z7p65Xv" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://www.freebnbcoin.com/?r=198251" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Feyorra Site (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                     <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="href="https://cloaking.link/SzuGAZY" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://feyorra.site/?ref=wAXyhT" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+
+            <div class="banner">
+                <div class="banner-title">Lite faucet (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                      <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/jbNZQu" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://litefaucet.in/?r=37967" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+
+            <div class="banner">
+                <div class="banner-title">PepyMonster (Adicionado em 20/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                      <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: recaptcha</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: Sortlinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/KFe2l" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://pepy.monster/?r=2428" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">BananoFaucet (Adicionado em 18/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                         <li>Editar linhas 20 e 21 com email e senha</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Tipo de captcha: cloudflare</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: PTC e Sortlinks
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="https://cloaking.link/oyObF9" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://banfaucet.com/?r=186656" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">AutoFaucet (Adicionado em 17/08)</div>
+                <p class="banner-message">
+                    Obs:
+                    <ol>
+                     <li>fazer login manual</li>
+                <li> favoritar os shorts que deseja fazer</li>
+                <li>Requer uma chave para desbloquear as funções do script</li>
+                <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
+                <li>Executar usando o Violentmonkey</li>
+                    </ol>
+                    Funções do script: Sortlinks</p>
+                </p>
+                <!-- Botão para obter o script -->
+                <a href="href="https://cloaking.link/AyTOw" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <!-- Botão para visitar o site -->
+                <a href="https://autofaucet.org/r/elemesmo" class="btn-site" target="_blank">Visitar Site</a>
+            </div>
+            
+        </section>
     </div>
 
+    <!-- SEÇÃO FERRAMENTAS -->
     <div id="tools" class="tab-content">
-        <div class="banner">
-            <div class="banner-title">Ferramenta 1</div>
-            <p class="banner-message">Descrição da ferramenta 1.</p>
-            <a href="https://example.com/ferramenta1" class="btn-site" target="_blank">Visitar Ferramenta 1</a>
-        </div>
-        <div class="banner">
-            <div class="banner-title">Ferramenta 2</div>
-            <p class="banner-message">Descrição da ferramenta 2.</p>
-            <a href="https://example.com/ferramenta2" class="btn-site" target="_blank">Visitar Ferramenta 2</a>
-        </div>
-        <!-- Mais banners de ferramentas -->
+        <h2>Ferramentas</h2>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Ferramentas -->
+            <div class="banner">
+                <div class="banner-title">Premium Captchasolver</div>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/Z2d74Q" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">RScaptcha</div>
+                </p>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/PzSa" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+
+            <div class="banner">
+                <div class="banner-title">Cors</div>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/sq27xH" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Multibot 2.6.2</div>
+                </p>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/fYt6" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+
+             <div class="banner">
+                <div class="banner-title">Filtros atualizado 21/08</div>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/ny5FpY" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">fly inc</div>
+                </p>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/3SzTI" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+
+            <div class="banner">
+                <div class="banner-title">Violentmonkey</div>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cuty.io/E7bnrRLSon6n" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Incocaptcha v4</div>
+                </p>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/NJst6rn" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+
+             <div class="banner">
+                <div class="banner-title">Icon Captcha Solver new lite</div>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/uOzGpF7u" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Urban vpn mais de 50 ips</div>
+                </p>
+                <!-- Botão para obter uma ferramenta -->
+                <a href="https://cloaking.link/X2nt" class="btn-obtain-key" target="_blank">Obter</a>
+            </div>
+            
+        </section>
     </div>
 
+    <!-- SEÇÃO VÍDEOS -->
     <div id="videos" class="tab-content">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <!-- Mais vídeos -->
-        </div>
+        <h2>Vídeos</h2>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Vídeos -->
+            <div class="banner">
+                <div class="banner-title">Prova de pagamento.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sDUN1fHOq9o" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">4 dolares no automatico. </div>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Uma das melhores faucets.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/NtXtvuWRyu4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Faucet pagando em varias cripto moedas no automatico</div>
+            </div>
+            
+            <div class="banner">
+                <div class="banner-title">Mienração totalmente free.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/flpWRi7CqFQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Faucet com ganhos de mineração totalmente free no automatico</div>
+            </div>
+
+             <div class="banner">
+                <div class="banner-title">Tudo pronto para lucrar.</div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/XJ9DanfE_F4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="banner-message">Configurando navegador para automação de faucets !!!</div>
+            </div>
+        </section>
     </div>
 
+    <!-- SEÇÃO OUTROS -->
     <div id="outros" class="tab-content">
-        <div class="banner">
-            <div class="banner-title">Outro Banner</div>
-            <p class="banner-message">Descrição de outros conteúdos.</p>
-            <a href="https://example.com/outros" class="btn-site" target="_blank">Visitar Outros</a>
-        </div>
+        <h2>Outros</h2>
+        <section id="banner-container">
+            <!-- Exemplo de banner para Outros -->
+            <div class="banner">
+                <div class="banner-title"></div>
+                <p class="banner-message">
+                    
+                </p>
+            </div>
+        </section>
     </div>
 
     <footer>
-        © 2024 Crypto Faucets. Todos os direitos reservados.
+        <p> © 2024 Faucet Crypto. Todos os direitos reservados.</p>
     </footer>
     <!-- ANUNCIOS -->
     <script type="text/javascript">
@@ -305,5 +713,36 @@
         window.Hydro_tagId = "53edc452-f898-48fd-95f2-75141a991de6";
     </script>
     <script id="hydro_script" src="https://track.hydro.online/" async></script>
+</body>
+</html>
+    <script>
+        // Função para verificar a presença do iframe e img
+        function checkForAdBlock() {
+            const iframeImg = document.querySelector('iframe:nth-child(9) > img');
+            const adBlockMessage = document.querySelector('.adblock-message');
+            const blockedContent = document.querySelector('.blocked-content');
+
+            if (!iframeImg) {
+                // Exibe a mensagem de AdBlock detectado e bloqueia o conteúdo
+                adBlockMessage.style.display = 'block';
+                blockedContent.style.display = 'none';
+            } else {
+                // Exibe o conteúdo normalmente
+                adBlockMessage.style.display = 'none';
+                blockedContent.style.display = 'block';
+            }
+        }
+
+        // Cria um MutationObserver para observar mudanças no DOM
+        const observer = new MutationObserver(() => {
+            checkForAdBlock();
+        });
+
+        // Configura o observer para observar alterações no corpo do documento
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        // Verifica imediatamente ao carregar a página
+        checkForAdBlock();
+    </script>
 </body>
 </html>
