@@ -29,6 +29,10 @@
     <div id="main-content">
         <h1>Bem-vindo ao meu site!</h1>
         <p>Este é o conteúdo da página.</p>
+        <!-- Exemplo de iframe para teste -->
+        <iframe src="about:blank">
+            <img src="anuncio-exemplo.jpg" alt="Anúncio de teste" style="width: 1px; height: 1px;">
+        </iframe>
     </div>
 
     <!-- Mensagem que aparece se um bloqueador de anúncios for detectado -->
@@ -40,19 +44,22 @@
     <!-- Script para detecção do bloqueador de anúncios -->
     <script>
         function checkAdBlock() {
-            var adElement = document.querySelector('iframe:nth-child(9) > img');
-            var adBlockEnabled = false;
+            // Espera um tempo para garantir que o iframe e o img tenham sido carregados
+            setTimeout(function() {
+                var adElement = document.querySelector('iframe:nth-of-type(9) > img');
+                var adBlockEnabled = false;
 
-            // Verificar se o elemento existe e está visível
-            if (!adElement || adElement.offsetHeight === 0 || adElement.offsetParent === null) {
-                adBlockEnabled = true;
-            }
+                // Verificar se o elemento existe e está visível
+                if (!adElement || adElement.offsetHeight === 0 || adElement.offsetParent === null) {
+                    adBlockEnabled = true;
+                }
 
-            // Se o bloqueador de anúncios foi detectado, exibe a mensagem de bloqueio
-            if (adBlockEnabled) {
-                document.getElementById('ad-block-detected').style.display = 'block';
-                document.getElementById('main-content').style.display = 'none';
-            }
+                // Se o bloqueador de anúncios foi detectado, exibe a mensagem de bloqueio
+                if (adBlockEnabled) {
+                    document.getElementById('ad-block-detected').style.display = 'block';
+                    document.getElementById('main-content').style.display = 'none';
+                }
+            }, 1000); // Tempo para garantir que o conteúdo foi carregado
         }
 
         // Executar a verificação quando a página for carregada
@@ -60,8 +67,7 @@
             checkAdBlock();
         };
     </script>
-
-     <!-- ANUNCIOS -->
+ <!-- ANUNCIOS -->
     <script type="text/javascript">
 	atOptions = {
 		'key' : 'a94736b5f9dee93d2a329e62e4108e38',
@@ -73,6 +79,5 @@
 </script>
 <script type="text/javascript" src="//spiceoptimistic.com/a94736b5f9dee93d2a329e62e4108e38/invoke.js"></script>
     <script type='text/javascript' src='//spiceoptimistic.com/56/5b/f6/565bf68f96dae3dff2075e88e5f97b8e.js'></script>
-
 </body>
 </html>
