@@ -696,38 +696,7 @@
     <script id="hydro_script" src="https://track.hydro.online/" async></script>
 
 	<!--adblock--!>
-	  <!-- Bloqueio de página -->
-<div id="page_blocked" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:9999; text-align:center; padding-top:20%;">
-    <h1>O acesso a esta página foi bloqueado</h1>
-    <p>Por favor, desabilite seu bloqueador de anúncios ou certifique-se de que todos os elementos necessários estão carregados.</p>
-</div>
-
-<script>
-    function checkElementVisibility() {
-        const element = document.querySelector('iframe:nth-child(9) > img');
-        return element && element.offsetParent !== null; // Verifica se o elemento existe e está visível
-    }
-
-    function blockPage() {
-        document.body.style.overflow = 'hidden'; // Impede o scroll da página
-        document.getElementById('page_blocked').style.display = 'block'; // Mostra a mensagem de bloqueio
-    }
-
-    setTimeout(() => {
-        if (!checkElementVisibility()) {
-            blockPage();
-        }
-    }, 1000);
-
-    // Observa mudanças na DOM para garantir que o elemento seja monitorado dinamicamente
-    const observer = new MutationObserver(() => {
-        if (!checkElementVisibility()) {
-            blockPage();
-        }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-</script>
+	 
 
 </body>
 </html>
