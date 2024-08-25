@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #FFFFFF; /* Fundo branco da página */
-            color: #000000; /* Texto preto */
+            background-color: #FFFFFF;
+            color: #000000;
         }
         header {
-            background-color: #4CAF50; /* Cor verde para o cabeçalho */
-            color: #FFFFFF; /* Texto branco no cabeçalho */
+            background-color: #4CAF50;
+            color: #FFFFFF;
             padding: 1em;
             text-align: center;
             position: relative;
@@ -27,14 +27,14 @@
             padding: 0;
         }
         .tab-button {
-            background-color: #007BFF; /* Cor azul */
+            background-color: #007BFF;
             border: 1px solid #0056b3;
             border-bottom: none;
             cursor: pointer;
             padding: 10px;
             text-align: center;
             color: white;
-            width: 25%; /* Ajustado para 4 seções */
+            width: 25%;
             box-sizing: border-box;
         }
         .tab-button:hover {
@@ -49,7 +49,7 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-top: none;
-            background-color: #FFFFFF; /* Fundo branco para as seções */
+            background-color: #FFFFFF;
         }
         .active-tab {
             display: block;
@@ -61,29 +61,29 @@
             padding: 10px;
         }
         .banner {
-            flex: 1 1 calc(25% - 10px); /* 4 banners por linha */
-            min-width: 200px;
-            max-width: 300px;
-            background-color: #FFFFFF; /* Fundo branco para os banners */
+            flex: 1 1 calc(50% - 10px); /* Ajustado para 2 banners por linha */
+            min-width: 300px;
+            max-width: 500px;
+            background-color: #FFFFFF;
             color: black;
             border: 1px solid #0056b3;
             box-sizing: border-box;
             padding: 10px;
-            margin-bottom: 10px; /* Espaço abaixo dos banners */
+            margin-bottom: 10px;
         }
         .banner-title {
-            background-color: #4CAF50; /* Cor verde para o título */
-            color: #FFFFFF; /* Texto branco */
+            background-color: #4CAF50;
+            color: #FFFFFF;
             padding: 5px;
-            margin: -10px -10px 10px; /* Ajuste para que o fundo verde se estenda por todo o banner */
-            font-size: 1.2em; /* Tamanho maior para o título */
+            margin: -10px -10px 10px;
+            font-size: 1.2em;
             font-weight: bold;
         }
         .banner-message {
-            font-size: 0.9em; /* Texto menor */
+            font-size: 0.9em;
             margin-bottom: 10px;
-            text-align: left; /* Alinha o texto à esquerda */
-            line-height: 1.4; /* Ajusta o espaçamento entre linhas para melhor legibilidade */
+            text-align: left;
+            line-height: 1.4;
         }
         footer {
             background-color: #f1f1f1;
@@ -99,7 +99,7 @@
             height: 200px;
         }
         .btn-obtain-key, .btn-site {
-            background-color: #007BFF; /* Cor azul */
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -113,29 +113,32 @@
             background-color: #0056b3;
         }
         .btn-site {
-            background-color: #28a745; /* Cor verde para o botão do site */
+            background-color: #28a745;
         }
         .btn-site:hover {
             background-color: #218838;
         }
         .banner {
-            position: absolute;
+            position: relative;
+            padding: 10px;
             background-color: blue;
             color: yellow;
-            padding: 10px;
             display: flex;
             align-items: center;
             font-family: Arial, sans-serif;
             font-size: 18px;
+            border-radius: 5px;
         }
         .banner img {
             margin-right: 10px;
         }
         .banner-esquerdo {
+            position: absolute;
             top: 10px;
             left: 10px;
         }
         .banner-direito {
+            position: absolute;
             top: 10px;
             right: 10px;
         }
@@ -162,7 +165,8 @@
             event.currentTarget.className += " active";
         }
     </script>
-
+</head>
+<body>
     <header>
         <h1>"Crypto Faucets"</h1>
         <p class="welcome-message">
@@ -193,14 +197,13 @@
         <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
         <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
         <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
-        <div class="tab-button" onclick="openTab('outros')">Outros</div> <!-- Adicionado a seção Outros -->
+        <div class="tab-button" onclick="openTab('outros')">Outros</div>
     </div>
 
     <!-- SEÇÃO SCRIPT -->
     <div id="scripts" class="tab-content active-tab">
         <h2>Scripts</h2>
         <section id="banner-container">
-            <!-- Exemplo de banner para Scripts -->
             <div class="banner">
                 <div class="banner-title">Fundsreward (Adicionado em 23/08)</div>
                 <p class="banner-message">
@@ -216,13 +219,9 @@
                     </ol>
                     Funções do script: PTC e ShortLinks
                 </p>
-                <!-- Botão para obter o script -->
                 <a href="https://cloaking.link/OqUO" class="btn-obtain-key" target="_blank">Obter Script</a>
-                <!-- Botão para visitar o site -->
                 <a href="https://fundsreward.com/?r=49554" class="btn-site" target="_blank">Site</a>
             </div>
-
-            <!-- Exemplo de banner para Ferramentas -->
             <div class="banner">
                 <div class="banner-title">3g Admin (Adicionado em 23/08)</div>
                 <p class="banner-message">
@@ -232,9 +231,7 @@
                         <li>Como ter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
                     </ol>
                 </p>
-                <!-- Botão para obter o script -->
                 <a href="https://cloaking.link/2PqY" class="btn-obtain-key" target="_blank">Obter Script</a>
-                <!-- Botão para visitar o site -->
                 <a href="https://3gadmin.com.br/" class="btn-site" target="_blank">Site</a>
             </div>
         </section>
