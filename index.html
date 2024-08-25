@@ -1,226 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Faucets</title>
+    <title>Minhas Ferramentas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-color: #FFFFFF; /* Fundo branco da página */
-            color: #000000; /* Texto preto */
         }
+
         header {
-            background-color: #4CAF50; /* Cor verde para o cabeçalho */
-            color: #FFFFFF; /* Texto branco no cabeçalho */
-            padding: 1em;
-            text-align: center;
-            position: relative;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .header-box {
-            background-color: #007BFF; /* Cor azul */
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: #FFFFFF; /* Texto branco */
-            font-size: 1em;
-        }
-        .welcome-message {
-            margin-top: 10px;
-            font-size: 1em;
-            color: #FFFFFF;
-        }
-        .tabs {
-            display: flex;
-            background-color: #f1f1f1;
-            margin: 0;
-            padding: 0;
-        }
-        .tab-button {
-            background-color: #007BFF; /* Cor azul */
-            border: 1px solid #0056b3;
-            border-bottom: none;
-            cursor: pointer;
-            padding: 10px;
-            text-align: center;
+            background-color: #007bff;
             color: white;
-            width: 25%; /* Ajustado para 4 seções */
-            box-sizing: border-box;
+            padding: 10px 0;
+            text-align: center;
         }
-        .tab-button:hover {
+
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        .tab a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
             background-color: #0056b3;
+            border-radius: 5px;
         }
-        .tab-button.active {
-            background-color: #0056b3;
-            font-weight: bold;
+
+        .tab a:hover {
+            background-color: #003d7a;
         }
+
         .tab-content {
             display: none;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-top: none;
-            background-color: #FFFFFF; /* Fundo branco para as seções */
+            background-color: white;
+            border: 1px solid #ddd;
+            margin: 20px;
+            border-radius: 5px;
         }
-        .active-tab {
+
+        .tab-content.active {
             display: block;
         }
-        #banner-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px;
-        }
+
         .banner {
-            flex: 1 1 calc(25% - 10px); /* 4 banners por linha */
-            min-width: 200px;
-            max-width: 300px;
-            background-color: #FFFFFF; /* Fundo branco para os banners */
-            color: black;
-            border: 1px solid #0056b3;
-            box-sizing: border-box;
-            padding: 10px;
-            margin-bottom: 10px; /* Espaço abaixo dos banners */
-        }
-        .banner-title {
-            background-color: #4CAF50; /* Cor verde para o título */
-            color: #FFFFFF; /* Texto branco */
-            padding: 5px;
-            margin: -10px -10px 10px; /* Ajuste para que o fundo verde se estenda por todo o banner */
-            font-size: 1.2em; /* Tamanho maior para o título */
-            font-weight: bold;
-        }
-        .banner-message {
-            font-size: 0.9em; /* Texto menor */
-            margin-bottom: 10px;
-            text-align: left; /* Alinha o texto à esquerda */
-            line-height: 1.4; /* Ajusta o espaçamento entre linhas para melhor legibilidade */
-        }
-        /* Correção específica para a seção "Scripts" */
-        #scripts .banner-message {
-            text-align: left; /* Garante que o texto esteja alinhado à esquerda */
-        }
-        /* Correção específica para a seção "Ferramentas" */
-        #tools .banner-message {
-            text-align: left; /* Garante que o texto esteja alinhado à esquerda */
-        }
-        footer {
-            background-color: #f1f1f1;
-            padding: 0.1em;
-            text-align: right;
-            position: fixed;
-            width: auto;
-            bottom: 0;
-        }
-        .video-container iframe {
-            width: 100%;
-            max-width: 300px;
-            height: 200px;
-        }
-        .btn-obtain-key, .btn-site {
-            background-color: #007BFF; /* Cor azul */
-            color: white;
-            border: none;
-            padding: 10px 20px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            text-decoration: none;
-            display: inline-block;
         }
-        .btn-obtain-key:hover, .btn-site:hover {
+
+        .banner-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .banner-message {
+            margin-bottom: 20px;
+        }
+
+        .btn-obtain-key,
+        .btn-site {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn-obtain-key:hover,
+        .btn-site:hover {
             background-color: #0056b3;
         }
-        .btn-site {
-            background-color: #28a745; /* Cor verde para o botão do site */
-        }
-        .btn-site:hover {
-            background-color: #218838;
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
-    <script>
-        function openTab(tabName) {
-            var i, tabContent, tabButtons;
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-            tabButtons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            event.currentTarget.className += " active";
-        }
-    </script>
 </head>
+
 <body>
     <header>
-        <div class="header-content">
-            <div class="header-box">Keno Venas</div>
-            <div class="header-box">
-                <a href="https://t.me/+Mns6IsONSxliZDkx" target="_blank" style="color: #FFFFFF;">Grupo do Telegram</a>
-            </div>
-        </div>
-        <h1>"Crypto Faucets"</h1>
-        <p class="welcome-message">
-            <p>Olá, seja bem-vindo ao nosso site de ferramentas para automação!</p>
-            <p>Aqui você encontrará soluções incríveis para maximizar seus ganhos</p>
-            <p>e automatizar suas faucets, aumentando sua renda extra.</p>
-            <p>Estamos aqui para tornar sua jornada mais eficiente e lucrativa.</p>
-            <p>Aproveite!!!!</p>
-        </p>
+        <h1>Minhas Ferramentas</h1>
     </header>
 
-    <div class="tabs">
-        <div class="tab-button active" onclick="openTab('scripts')">Scripts</div>
-        <div class="tab-button" onclick="openTab('tools')">Ferramentas</div>
-        <div class="tab-button" onclick="openTab('videos')">Vídeos</div>
-        <div class="tab-button" onclick="openTab('outros')">Outros</div> <!-- Adicionado a seção Outros -->
+    <div class="tab">
+        <a href="#scripts">Scripts</a>
+        <a href="#tools">Ferramentas</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#outros">Outros</a>
     </div>
 
-    <!-- SEÇÃO SCRIPT -->
-    <div id="scripts" class="tab-content active-tab">
+    <!-- SEÇÃO SCRIPTS -->
+    <div id="scripts" class="tab-content active">
         <h2>Scripts</h2>
         <section id="banner-container">
-            <!-- Exemplo de banner para Scripts -->
-                 
-                <div class="banner">
-                <div class="banner-title">Fundsreward (Adicionado em 23/08)</div>
+            <!-- Exemplo de banner -->
+            <div class="banner">
+                <div class="banner-title">Fundsreward (Adicionado em 21/08)</div>
                 <p class="banner-message">
                     Obs:
                     <ol>
-                        <li>Editar email e senha nas linhas 20 e 21</li>
-                        <li>Remover ou incluir shorts na linha 22 para excluir ou adicionar shortlinks indesejados no site</li>
-                        <li>Tipo de captcha: Recaptcha e Antibot</li>
-                        <li>Usar multibot disponível na seção ferramentas</li>
+                        <li>Login manual</li>
+                        <li>Remover ou incluir shorts a partir da linha 15 para excluir ou adicionar shortlinks indesejados no site</li>
+                        <li>Tipo de captcha: Recaptcha</li>
                         <li>Executar usando o Violentmonkey</li>
                         <li>Requer uma chave para desbloquear as funções do script</li>
                         <li>Como obter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
                     </ol>
-                    Funções do script: PTC e ShortLinks
+                    Funções do script: ShortLinks
                 </p>
                 <!-- Botão para obter o script -->
-                <a href="https://cloaking.link/OqUO" class="btn-obtain-key" target="_blank">Obter Script</a>
+                <a href="https://cloaking.link/jEDv" class="btn-obtain-key" target="_blank">Obter Script</a>
                 <!-- Botão para visitar o site -->
-                <a href="https://fundsreward.com/?r=49554" class="btn-site" target="_blank">Visitar Site</a>
+                <a href="https://tronpayz.com/?r=30070" class="btn-site" target="_blank">Visitar Site</a>
             </div>
 
-                <div class="banner">
+            <div class="banner">
                 <div class="banner-title">Tronpayz (Adicionado em 21/08)</div>
                 <p class="banner-message">
                     Obs:
                     <ol>
                         <li>Login manual</li>
-                        <li>Remover ou incluir shorts a partir da linha 19 para excluir ou adicionar shortlinks indesejados no site</li>
-                        <li>Tipo de captcha: Sem captcha</li>
+                        <li>Remover ou incluir shorts a partir da linha 15 para excluir ou adicionar shortlinks indesejados no site</li>
+                        <li>Tipo de captcha: Recaptcha</li>
                         <li>Executar usando o Violentmonkey</li>
                         <li>Requer uma chave para desbloquear as funções do script</li>
                         <li>Como obter a chave? Clicar em "obter key", após obter, inserir, confirmar e recarregar a página</li>
@@ -298,56 +220,42 @@
     <!-- SEÇÃO FERRAMENTAS -->
     <div id="tools" class="tab-content">
         <h2>Ferramentas</h2>
-        <section id="banner-container">
-            <!-- Exemplo de banner para Ferramentas -->
-            <div class="banner">
-                <div class="banner-title">Multibot (Adicionado em 21/08)</div>
-                <p class="banner-message">
-                    Obs:
-                    <ol>
-                        <li>Adicionado Fundsreward (Adicionado em 21/08)</li>
-                        <li>Adicionado Tronpayz (Adicionado em 21/08)</li>
-                        <li>Adicionado Coinpayz (Adicionado em 18/08)</li>
-                        <li>Adicionado Claimbits (Adicionado em 18/08)</li>
-                        <li>Adicionado Coinadster (Adicionado em 15/08)</li>
-                    </ol>
-                </p>
-                <!-- Botão para obter a ferramenta -->
-                <a href="https://cloaking.link/JxnO" class="btn-obtain-key" target="_blank">Obter Ferramenta</a>
-            </div>
-        </section>
+        <p>Explore nossas ferramentas úteis para facilitar suas tarefas diárias.</p>
     </div>
 
     <!-- SEÇÃO VÍDEOS -->
     <div id="videos" class="tab-content">
         <h2>Vídeos</h2>
-        <section id="banner-container">
-            <!-- Exemplo de banner para Vídeos -->
-            <div class="banner">
-                <div class="banner-title">Como Configurar o Script</div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/seu-video-id" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p class="banner-message">Aprenda a configurar o script passo a passo neste vídeo tutorial.</p>
-            </div>
-        </section>
+        <p>Assista a vídeos tutoriais e informativos.</p>
     </div>
 
     <!-- SEÇÃO OUTROS -->
     <div id="outros" class="tab-content">
         <h2>Outros</h2>
-        <section id="banner-container">
-            <!-- Exemplo de banner para Outros -->
-            <div class="banner">
-                <div class="banner-title">Outras Ferramentas e Recursos</div>
-                <p class="banner-message">Explore outros recursos úteis para otimizar seu tempo e aumentar seus ganhos.</p>
-                <a href="https://linkparaoutrareferramenta.com" class="btn-obtain-key" target="_blank">Obter Ferramenta</a>
-            </div>
-        </section>
+        <p>Outros conteúdos e informações diversas.</p>
     </div>
 
     <footer>
-        <p>&copy; 2024 Keno Venas - Todos os direitos reservados.</p>
+        <p>&copy; 2024 Minhas Ferramentas. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab a');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+
+                this.classList.add('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                target.classList.add('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
